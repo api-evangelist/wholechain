@@ -1,0 +1,440 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-api-contracts-connect-events-requests-v2-connect-purchase-order-schema.json",
+  "title": "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder",
+  "required": [
+    "lineItems",
+    "poType",
+    "purchaseOrderNumber",
+    "shipFromTradePartner",
+    "shipToTradePartner"
+  ],
+  "type": "object",
+  "properties": {
+    "purchaseOrderId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "revisionId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "purchaseOrderNumber": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "poType": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderTypesContract"
+    },
+    "shipFromTradePartner": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+    },
+    "shipFromLocation": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+    },
+    "shipToTradePartner": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+    },
+    "shipToLocation": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+    },
+    "purposeCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "poTypeCode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "purchaseOrderDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "requestedDeliveryDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "cancelAfterDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "transportationMethod": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "visibility": {
+      "$ref": "#/$defs/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderVisibilityContract"
+    },
+    "locationShare": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "When true, ShipToLocation and store allocation locations are shared with the partner account.\nWhen null, account DefaultLocationSharing is used."
+    },
+    "productShare": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "When true, line item products are shared with the partner account.\nWhen null, account DefaultProductSharing is used."
+    },
+    "lineItems": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem"
+      }
+    },
+    "linkedEvents": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Wholechain.API.Contracts.Common.GeoCoordinatesContract": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation": {
+      "required": [
+        "location",
+        "quantity"
+      ],
+      "type": "object",
+      "properties": {
+        "location": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem": {
+      "required": [
+        "product",
+        "quantityOrdered"
+      ],
+      "type": "object",
+      "properties": {
+        "product": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+        },
+        "quantityOrdered": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "unitOfMeasure": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract"
+        },
+        "unitPrice": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "priceBasisCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "packSize": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64"
+        },
+        "storeAllocations": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent": {
+      "type": "object",
+      "properties": {
+        "eventType": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Enums.EventTypeContract"
+        },
+        "purchaseOrderNumber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "originLocation": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct"
+        },
+        "products": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct"
+          }
+        },
+        "tlcSource": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gtin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Enums.EventTypeContract": {
+      "enum": [
+        "Commission",
+        "Observe",
+        "Ship",
+        "Transform",
+        "Aggregation",
+        "Decommission",
+        "Disaggregation",
+        "Receive"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract": {
+      "type": "object",
+      "properties": {
+        "locationName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "companyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line2": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postalCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geoCoordinates": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Common.GeoCoordinatesContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract": {
+      "enum": [
+        "Identifier",
+        "MasterData"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract": {
+      "enum": [
+        "Kgm",
+        "Lbs",
+        "Cases",
+        "Units",
+        "Item",
+        "Lbr",
+        "Pint",
+        "Each",
+        "Bags",
+        "Boxes",
+        "Dozens",
+        "Gallons",
+        "Ounces",
+        "Packs",
+        "Quarts",
+        "Bushels",
+        "Trays",
+        "Tubs",
+        "Sides",
+        "Loins"
+      ],
+      "type": "string",
+      "description": "Simple units of measurement for products."
+    },
+    "Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderTypesContract": {
+      "enum": [
+        "Supplier",
+        "Customer",
+        "Other"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderVisibilityContract": {
+      "enum": [
+        "Private",
+        "SharedWithoutRevision",
+        "SharedWithRevision"
+      ],
+      "type": "string",
+      "description": "Purchase Order Visibility Contract."
+    }
+  }
+}

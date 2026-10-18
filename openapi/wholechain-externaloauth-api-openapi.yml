@@ -1,0 +1,74 @@
+openapi: 3.2.0
+info:
+  title: Wholechain External O Auth API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged ExternalOAuth across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: ExternalOAuth
+paths:
+  /integration/oauth/login:
+    get:
+      tags:
+      - ExternalOAuth
+      summary: Walmart App Store App Login entry.
+      operationId: Login
+      parameters:
+      - name: walmartCallbackUri
+        in: query
+        schema:
+          type: string
+      - name: clientType
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /integration/oauth/callback:
+    get:
+      tags:
+      - ExternalOAuth
+      summary: Registered Auth Callback (provider-generic).
+      operationId: Callback
+      parameters:
+      - name: code
+        in: query
+        schema:
+          type: string
+      - name: state
+        in: query
+        schema:
+          type: string
+      - name: partnerId
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: clientId
+        in: query
+        schema:
+          type: string
+      - name: error
+        in: query
+        schema:
+          type: string
+      - name: error_description
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

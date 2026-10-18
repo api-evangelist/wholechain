@@ -1,0 +1,29 @@
+generated: '2026-10-18'
+method: searched
+source: https://wholechain.com/pricing
+name: Wholechain rate limits
+limits:
+- name: Events per month (Lite plan)
+  limit_text: '500'
+  window: month
+  max: 500
+  scope: per account
+  plan: Lite
+- name: Events per month (Essentials plan)
+  limit_text: '500'
+  window: month
+  max: 500
+  scope: per account
+  plan: Essentials
+- name: Events per month (Premium plan)
+  limit_text: 1,500
+  window: month
+  max: 1500
+  scope: per account
+  plan: Premium
+- name: Events per month (Enterprise plan)
+  limit_text: Starting at 2,500
+  window: month
+  scope: per account
+  plan: Enterprise
+note: Rate limits are tied to pricing plans and measured as monthly event quotas. No API-level rate limits (requests per minute/hour) or burst limits are documented in the developer documentation.

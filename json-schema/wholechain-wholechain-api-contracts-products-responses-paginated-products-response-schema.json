@@ -1,0 +1,626 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-api-contracts-products-responses-paginated-products-response-schema.json",
+  "title": "Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse",
+  "type": "object",
+  "properties": {
+    "totalPages": {
+      "type": "integer",
+      "format": "int32",
+      "readOnly": true
+    },
+    "pageNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "totalItems": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "results": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Products.Responses.ProductResponse"
+      }
+    },
+    "hasNextPage": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasPreviousPage": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "grossCount": {
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract": {
+      "enum": [
+        "None",
+        "Stellar",
+        "Algorand"
+      ],
+      "type": "string",
+      "description": "Enum that represents different blockchain providers."
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse": {
+      "type": "object",
+      "properties": {
+        "certificationDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "standard": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse": {
+      "type": "object",
+      "properties": {
+        "documentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "documentDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse": {
+      "type": "object",
+      "properties": {
+        "keyDataElementValues": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse"
+          }
+        },
+        "certifications": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse"
+          }
+        },
+        "documents": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse": {
+      "type": "object",
+      "properties": {
+        "keyDataElementDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "profileImagePreSignedUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract": {
+      "enum": [
+        "Lot",
+        "Serial"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract": {
+      "enum": [
+        "Owner",
+        "Read",
+        "Write"
+      ],
+      "type": "string",
+      "description": "Describes a permission that an account has over a product."
+    },
+    "Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract": {
+      "enum": [
+        "Open",
+        "Restricted"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract": {
+      "enum": [
+        "Kgm",
+        "Lbs",
+        "Cases",
+        "Units",
+        "Item",
+        "Lbr",
+        "Pint",
+        "Each",
+        "Bags",
+        "Boxes",
+        "Dozens",
+        "Gallons",
+        "Ounces",
+        "Packs",
+        "Quarts",
+        "Bushels",
+        "Trays",
+        "Tubs",
+        "Sides",
+        "Loins"
+      ],
+      "type": "string",
+      "description": "Simple units of measurement for products."
+    },
+    "Wholechain.API.Contracts.Products.Enums.UnitDescriptorContract": {
+      "enum": [
+        "Cases",
+        "Units",
+        "Totes",
+        "Pallets"
+      ],
+      "type": "string",
+      "description": "Describes how a product simple unit of measurement is separated per unit descriptor.\nFor example a product measured in KGM could have 5 KGM per Case."
+    },
+    "Wholechain.API.Contracts.Products.ProductMasterDataContract": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "elementId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "keyDataElementDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Responses.ProductGoodKindResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract": {
+      "type": "object",
+      "properties": {
+        "ownerTradePartnerId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ownerTradePartnerName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ownerExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isOwner": {
+          "type": "boolean",
+          "description": "True when the calling account owns this trade item. False when the calling account\nis a sharee viewing a trade item that was shared to them."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Identifies the owning trade partner of a trade item (product) from the viewer's perspective.\nWholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerTradePartnerId and Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerTradePartnerName are the recipient-side\ntrade partner row that represents the owner. Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerExternalIdentifier is always the\nowner's own external identifier for the trade item, regardless of who is viewing."
+    },
+    "Wholechain.API.Contracts.Products.Responses.ProductResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sharingPolicy": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract"
+        },
+        "productIdentifierType": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract"
+        },
+        "accountId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productBrand": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse"
+        },
+        "productCommodity": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse"
+        },
+        "productGoodKind": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Responses.ProductGoodKindResponse"
+        },
+        "simpleUnitOfMeasurement": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract"
+        },
+        "unitQuantity": {
+          "type": "number",
+          "format": "double"
+        },
+        "unitDescriptor": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.UnitDescriptorContract"
+        },
+        "blockchain": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract"
+        },
+        "gtin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plu": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "upc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currentInventory": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "currentInventoryTotal": {
+          "type": "number",
+          "format": "double"
+        },
+        "shippedInventory": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productMasterData": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Products.ProductMasterDataContract"
+          }
+        },
+        "subProducts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Products.Responses.SubProductResponse"
+          }
+        },
+        "lastModifiedTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "createdTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "accountName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pendingShipmentItems": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hasActiveInventory": {
+          "type": "boolean",
+          "description": "True when the current account has at least one on-hand product instance\n(not deleted, consumed, superseded, or shipped)."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defaultImageDocumentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "defaultImagePreSignedUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sharedWith": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Products.Responses.ProductSharedWithContract"
+          }
+        },
+        "originalAccountId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "archived": {
+          "type": "boolean",
+          "description": "Whether the product catalog row is archived (hidden from default listings until unarchived)."
+        },
+        "dataPolicyElements": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse"
+        },
+        "ownerInfo": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Responses.ProductSharedWithContract": {
+      "type": "object",
+      "properties": {
+        "wholechainId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "accountName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "permission": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Responses.SubProductResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accountName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

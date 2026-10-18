@@ -1,0 +1,155 @@
+generated: '2026-10-18'
+method: searched
+source:
+- https://zapier.com/apps/wholechain/integrations
+- https://n8n.io/integrations/wholechain/
+- https://composio.dev/toolkits/wholechain
+- https://monid.ai/tools/wholechain
+checked:
+- https://composio.dev/toolkits/wholechain
+- https://make.com/en/integrations/wholechain
+- https://monid.ai/tools/wholechain
+- https://n8n.io/integrations/wholechain
+- https://n8n.io/integrations/wholechain/
+- https://wholechain.com/integrations
+- https://workato.com/integrations/wholechain
+- https://zapier.com/apps/wholechain/integrations
+summary: null
+marketplace_apps: []
+edges:
+- partner: microsoft-dynamics
+  partner_name: Microsoft Dynamics
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Microsoft Dynamics integration for product/location master data and event data synchronization
+- partner: oracle-netsuite
+  partner_name: Oracle NetSuite
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Oracle NetSuite integration for product/location master data and event data synchronization
+- partner: sap
+  partner_name: SAP
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: SAP integration (marketplace coming soon) for product/location master data and event data synchronization
+- partner: seasoft
+  partner_name: SeaSoft
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: SeaSoft integration for product/location master data and event data synchronization
+- partner: agritrack
+  partner_name: Agritrack
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Agritrack integration via GDST framework
+- partner: ap2hi-pasarmikro
+  partner_name: AP2HI & PasarMIKRO
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: AP2HI & PasarMIKRO integration via GDST framework
+- partner: fia-png-fims
+  partner_name: FIA PNG / FIMS
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: FIA PNG / FIMS integration via GDST framework
+- partner: koltiva
+  partner_name: Koltiva
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Koltiva integration via GDST framework
+- partner: opssmart
+  partner_name: OpsSmart
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: OpsSmart integration via GDST framework
+- partner: pacifical-smartuna
+  partner_name: Pacifical / SmarTuna
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Pacifical / SmarTuna integration via GDST framework
+- partner: sfs-trace
+  partner_name: SFS Trace
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: SFS Trace integration via GDST framework
+- partner: thisfish
+  partner_name: ThisFish
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: ThisFish integration via GDST framework
+- partner: trace-register
+  partner_name: Trace Register
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Trace Register integration via GDST framework
+- partner: food-logiq
+  partner_name: Food LogiQ by Trustwell
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Food LogiQ by Trustwell integration for shipment data
+- partner: ifoodds
+  partner_name: iFoodDS
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: iFoodDS integration for shipment data
+- partner: reposistrak
+  partner_name: Repositrak
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Repositrak integration for shipment data
+- partner: bap-status-checker
+  partner_name: BAP Status Checker
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: BAP Status Checker integration (coming soon) for certified producer verification
+- partner: gsa-prism
+  partner_name: GSA Prism
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: GSA Prism integration for seafood certification and audit data
+- partner: google-analytics
+  partner_name: Google Analytics
+  direction: provider-built
+  type: claimed
+  evidence: https://wholechain.com/integrations
+  operations: []
+  note: Google Analytics integration for tracking customer engagement with traceability experiences
+templates: []
+note: Wholechain has extensive integration partnerships primarily in the supply chain traceability, ERP, and seafood
+  certification spaces. Most integrations leverage industry standards like GDST and EPCIS.

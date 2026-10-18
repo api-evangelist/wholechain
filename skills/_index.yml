@@ -1,0 +1,12 @@
+name: Wholechain agent skills
+generated: '2026-10-18'
+method: generated
+source: openapi/wholechain-openapi.yml
+note: No provider-published skills or AGENTS.md were found (developers.wholechain.com/AGENTS.md 404). These skills are generated from the Wholechain Connect OpenAPI.
+skills:
+- name: wholechain-record-traceability-events
+  path: skills/wholechain-record-traceability-events.md
+- name: wholechain-manage-master-data
+  path: skills/wholechain-manage-master-data.md
+- name: wholechain-trace-and-epcis
+  path: skills/wholechain-trace-and-epcis.md

@@ -1,0 +1,147 @@
+openapi: 3.2.0
+info:
+  title: Wholechain Edi API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged Edi across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: Edi
+paths:
+  /Edi/files/notification:
+    post:
+      tags:
+      - Edi
+      operationId: NotifyNewEdiFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Services.FileService.FileUploadEvent'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Services.FileService.FileUploadEvent'
+      responses:
+        '200':
+          description: OK
+      summary: Notify new edi file
+      x-summary-source: derived
+components:
+  schemas:
+    Wholechain.Connect.Application.Services.FileService.FileUploadEvent:
+      type: object
+      properties:
+        total_size:
+          type: integer
+          format: int32
+        token:
+          type:
+          - string
+          - 'null'
+        organisation_id:
+          type:
+          - string
+          - 'null'
+        authenticated_user:
+          type:
+          - string
+          - 'null'
+        filename:
+          type:
+          - string
+          - 'null'
+        path:
+          type:
+          - string
+          - 'null'
+        relative_path:
+          type:
+          - string
+          - 'null'
+        filename_relative:
+          type:
+          - string
+          - 'null'
+        storage_engine:
+          type:
+          - string
+          - 'null'
+        storage_engine_id:
+          type:
+          - string
+          - 'null'
+        event_type:
+          type:
+          - string
+          - 'null'
+        ip_address:
+          type:
+          - string
+          - 'null'
+        success:
+          type: boolean
+        file_size:
+          type: integer
+          format: int32
+        additional_info:
+          type:
+          - string
+          - 'null'
+        system:
+          type:
+          - string
+          - 'null'
+        transaction_id:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type: number
+          format: double
+        event_id:
+          type:
+          - string
+          - 'null'
+        shared_link_id:
+          type:
+          - string
+          - 'null'
+        inbox_id:
+          type:
+          - string
+          - 'null'
+        node:
+          type:
+          - string
+          - 'null'
+        message:
+          type:
+          - string
+          - 'null'
+        is_support_generated:
+          type: boolean
+        error_type:
+          type:
+          - string
+          - 'null'
+        error_message:
+          type:
+          - string
+          - 'null'
+        error_original:
+          type:
+          - string
+          - 'null'
+        text:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

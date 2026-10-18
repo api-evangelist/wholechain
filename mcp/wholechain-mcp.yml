@@ -1,0 +1,72 @@
+name: Wholechain MCP (candidate)
+type: MCPServer
+generated: '2026-10-18'
+method: derived
+source: openapi/wholechain-openapi.yml
+status: candidate
+description: >-
+  No official Wholechain MCP server was found. The pre-flight contract discovery reported mcp=absent on
+  api/app/dashboard/developers.wholechain.com and wholechain.com, the developer docs index
+  (developers.wholechain.com, 39 pages) has no MCP page, wholechain.com/llms.txt does not mention MCP, and a
+  web search for a Wholechain MCP server returned nothing provider-specific (2026-10-18). The tools below are a
+  CANDIDATE list derived from operations in the Wholechain Connect OpenAPI; no server exposes them.
+deployment:
+  mode: none
+  auth: api-key
+  verified: derived
+evidence:
+- url: https://developers.wholechain.com/llms.txt
+  status: 404
+- url: https://wholechain.com/llms.txt
+  status: 200
+  note: no MCP mention
+auth_note: Every operation takes an X-API-KEY header (spec parameter; https://developers.wholechain.com/GettingStarted/Authentication/).
+tools:
+- name: submit_events
+  operation: ProcessEvents
+  description: Submit traceability events (commission, aggregation, ship, receive, transform, observe) synchronously.
+- name: enqueue_events
+  operation: EnqueueEvents
+  description: Submit traceability events for asynchronous processing.
+- name: delete_event
+  operation: DeleteEvent
+  description: Remove an event by id.
+- name: list_event_details
+  operation: ListEventDetails
+  description: List event details for a lot/serial or purchase order, optionally performing a traceback.
+- name: list_locations
+  operation: ListLocations
+  description: List locations / trade partners.
+- name: get_location
+  operation: GetLocation
+  description: Get a location by id.
+- name: create_locations
+  operation: ProcessLocations
+  description: Create locations / trade partners.
+- name: list_products
+  operation: GetPaginatedProducts
+  description: Search and page through products.
+- name: create_products
+  operation: ProcessProducts
+  description: Create products.
+- name: get_inventory
+  operation: GetInventory
+  description: Get inventory by product and location.
+- name: get_purchase_order
+  operation: GetPurchaseOrder
+  description: Get a purchase order.
+- name: create_purchase_orders
+  operation: ProcessPurchaseOrders
+  description: Create purchase orders.
+- name: list_jobs
+  operation: GetJobs
+  description: List integration jobs.
+- name: epcis_capture
+  operation: Capture
+  description: Capture an EPCIS document.
+- name: get_capture_status
+  operation: GetCaptureStatus
+  description: Get the status of an EPCIS capture job.
+- name: health
+  operation: GetHealth
+  description: Check API health.

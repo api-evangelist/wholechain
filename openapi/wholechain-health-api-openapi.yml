@@ -1,0 +1,97 @@
+openapi: 3.2.0
+info:
+  title: Wholechain Health API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged Health across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: Health
+paths:
+  /Health:
+    get:
+      tags:
+      - Health
+      operationId: GetHealth
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportContract'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportContract'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportContract'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportContract'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportContract'
+        '503':
+          description: Service Unavailable
+      summary: Get health
+      x-summary-source: derived
+components:
+  schemas:
+    Wholechain.Connect.Application.Health.HealthReportContract:
+      type: object
+      properties:
+        entries:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/Wholechain.Connect.Application.Health.HealthReportEntryContract'
+        status:
+          $ref: '#/components/schemas/Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus'
+        totalDuration:
+          type: string
+          format: date-span
+      additionalProperties: false
+    Wholechain.Connect.Application.Health.HealthReportEntryContract:
+      type: object
+      properties:
+        data:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+          readOnly: true
+        description:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        duration:
+          type: string
+          format: date-span
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus'
+        tags:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          readOnly: true
+      additionalProperties: false
+    Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus:
+      enum:
+      - Unhealthy
+      - Degraded
+      - Healthy
+      type: string
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

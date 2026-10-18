@@ -1,0 +1,5 @@
+generated: '2026-10-18'
+method: none
+source: https://developers.wholechain.com/GettingStarted/Authentication/
+scopes: []
+note: The API uses API key authentication, not OAuth2. No OAuth scopes are documented or implemented.

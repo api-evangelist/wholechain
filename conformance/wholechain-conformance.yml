@@ -1,0 +1,39 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.wholechain.com/EventsV2/What_is_EPCIS/
+standards:
+- id: EPCIS
+  conforms: true
+  evidence: 'The API implements EPCIS (Electronic Product Code Information Services) standards for supply chain traceability, with dedicated endpoints
+    for EPCIS data capture and querying. Documentation states: ''EPCIS (Electronic Product Code Information Services) is a global GS1 standard
+    designed to enable the exchange of event data related to the movement and status of products throughout the supply chain.'''
+- id: GS1
+  conforms: true
+  evidence: The platform supports GS1 standards including GS1-128 barcodes, DataMatrix barcodes, and SSCC (Serialized Shipping Container Codes)
+    as documented in the pricing plans. The API includes GS1-specific headers like GS1-EPCIS-Version, GS1-CBV-Version, GS1-Capture-Error-Behavior,
+    and GS1-Extensions.
+- id: GDST
+  conforms: true
+  evidence: 'The platform supports GDST (Global Dialogue on Seafood Traceability) standards for seafood traceability, mentioned in documentation
+    and pricing plans under ''Interoperability & API Frameworks: EPCIS / GDST''.'
+- id: PTI
+  conforms: true
+  evidence: 'Supports Produce Traceability Initiative (PTI) compliance for labeling, mentioned in documentation and pricing plans: ''PTI compliance
+    made easy'' and ''Labeling PTI compliant labels''.'
+- id: FSMA-204
+  conforms: true
+  evidence: Supports FSMA 204 (Food Safety Modernization Act) compliance for food traceability, mentioned in pricing plans features.
+- id: openapi-3.0
+  conforms: true
+  evidence: the document declares 3.0.4
+- id: oauth2
+  conforms: false
+  evidence: no securitySchemes declared
+- id: rfc9457
+  conforms: true
+  evidence: application/problem+json on 7 response(s), e.g. POST /Integration/Documents 422
+- id: idempotency
+  conforms: false
+  evidence: no idempotency key parameter on mutating operations
+note: The API uses API key authentication (not OAuth2/OIDC) and does not implement JSON:API, RFC9457 problem details, or other cross-cutting web
+  API standards.

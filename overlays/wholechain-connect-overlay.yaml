@@ -1,0 +1,57 @@
+overlay: 1.0.0
+info:
+  title: Wholechain Connect API enhancements (API Evangelist)
+  version: 1.0.0
+  x-generated: '2026-10-18'
+  x-method: generated
+extends: ../openapi/_original/wholechain-openapi.yml
+actions:
+- target: $.components
+  description: Declare the X-API-KEY header (passed as a per-operation header parameter in the original) as a reusable security scheme.
+  update:
+    securitySchemes:
+      ApiKeyAuth:
+        type: apiKey
+        in: header
+        name: X-API-KEY
+        description: API key from the Wholechain app; see https://developers.wholechain.com/GettingStarted/Authentication/
+- target: $
+  description: Apply the API key scheme globally.
+  update:
+    security:
+    - ApiKeyAuth: []
+- target: $.info
+  description: Point to the developer documentation.
+  update:
+    x-documentation: https://developers.wholechain.com/
+- target: $.paths['/gdst/{gdstVersion}/epcis/events'].get
+  description: The original reuses operationId EpcisQueryInterface on three paths; give this one a unique id.
+  update:
+    operationId: GdstEpcisQueryInterface
+- target: $.paths['/epcis/Events'].get
+  description: The original reuses operationId EpcisQueryInterface on three paths; give this one a unique id.
+  update:
+    operationId: EpcisEventsQueryInterface
+- target: $.paths['/Integration'].post
+  description: The original operationId "XML" is not descriptive.
+  update:
+    x-original-operationId: XML
+    summary: Submit an XML integration payload
+- target: $.paths['/Integration/Events'].post
+  update:
+    summary: Submit traceability events (synchronous)
+- target: $.paths['/Integration/Events/async'].post
+  update:
+    summary: Submit traceability events (asynchronous)
+- target: $.paths['/Integration/Events/{eventId}'].delete
+  update:
+    summary: Remove an event
+- target: $.paths['/Integration/Products'].get
+  update:
+    summary: Search products (paginated)
+- target: $.paths['/Integration/Locations'].get
+  update:
+    summary: List locations / trade partners
+- target: $.paths['/Integration/Inventory'].get
+  update:
+    summary: Get inventory

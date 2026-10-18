@@ -1,0 +1,231 @@
+generated: '2026-10-18'
+method: searched
+generator: extract-docs-artifacts.py (deepseek)
+source: https://wholechain.com/pricing
+sources:
+- https://wholechain.com/pricing
+name: Wholechain pricing
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  evidence: The pricing page describes SaaS subscription plans with no mention of self-hosting or open-source licensing.
+plans:
+- name: Lite
+  price_text: Learn More
+  features:
+  - 2 Products / Trade Items
+  - 2 Locations
+  - 1 Users
+  - 5 Documents (unlimited sharing)
+  - 500 Events per month
+  - 3 years Data retention
+  - Shared Only Data templates
+  - Multi-commodity support
+  - Blockchain enabled
+  - Multi-account access
+  - Digital Traceability Web dashboard
+  - Mobile app
+  - Dynamic data management
+  - EPCIS / GDST
+  - Polygons (GeoJSON)
+  - Receiving log
+  - Shipping log
+  - FSMA 204 compliance
+  - Supplier management
+  - Labeling PTI compliant labels
+  - GS1-128 barcodes
+  - DataMatrix barcodes
+  - Voice Pick Codes
+  - Create case & pallet labels
+  - SSCC (Serialized Shipping Container Codes)
+  - Supplier Management Purchase order tracking
+  - Supplier guidelines
+  - Share trade items (coming soon)
+  - Invite suppliers for free plans
+  - Custom branded supplier portal
+  - Use your own supplier portal domain
+  - 'Interoperability & API Frameworks: EPCIS / GDST Connect to trade partners Wholechain only'
+  - Send data to other systems
+  - 'Receive data from other systems Formats: CSV, XML and JSON'
+  - Receive data via email, SFTP or API
+  - Premium integrations
+  - API access
+  - Add-on Incoming shipment data via supplier portal
+  - Help center access
+  - Help Docs All + Email & Chat
+  limits:
+  - name: Products / Trade Items
+    limit_text: '2'
+  - name: Locations
+    limit_text: '2'
+  - name: Users
+    limit_text: '1'
+  - name: Documents (unlimited sharing)
+    limit_text: '5'
+  - name: Events per month
+    limit_text: '500'
+- name: Essentials
+  price_text: Get Started
+  features:
+  - 10 Products / Trade Items
+  - 10 Locations
+  - 3 Users
+  - 250 Documents (unlimited sharing)
+  - 500 Events per month
+  - 3 years Data retention
+  - Shared Only Data templates
+  - Multi-commodity support
+  - Blockchain enabled
+  - Multi-account access
+  - Digital Traceability Web dashboard
+  - Mobile app
+  - Dynamic data management
+  - EPCIS / GDST
+  - Polygons (GeoJSON)
+  - Receiving log
+  - Shipping log
+  - FSMA 204 compliance
+  - Supplier management
+  - Labeling PTI compliant labels
+  - GS1-128 barcodes
+  - DataMatrix barcodes
+  - Voice Pick Codes
+  - Create case & pallet labels
+  - SSCC (Serialized Shipping Container Codes)
+  - Supplier Management Purchase order tracking
+  - Supplier guidelines
+  - Share trade items (coming soon)
+  - Invite suppliers for free plans
+  - Custom branded supplier portal
+  - Use your own supplier portal domain
+  - 'Interoperability & API Frameworks: EPCIS / GDST Connect to trade partners Wholechain only'
+  - Send data to other systems
+  - 'Receive data from other systems Formats: CSV, XML and JSON'
+  - Receive data via email, SFTP or API
+  - Premium integrations
+  - API access
+  - Add-on Incoming shipment data via supplier portal
+  - Help center access
+  - Help Docs All + Email & Chat
+  limits:
+  - name: Products / Trade Items
+    limit_text: '10'
+  - name: Locations
+    limit_text: '10'
+  - name: Users
+    limit_text: '3'
+  - name: Documents (unlimited sharing)
+    limit_text: '250'
+  - name: Events per month
+    limit_text: '500'
+- name: Premium
+  price_text: Get Started
+  features:
+  - Starting at 20 Products / Trade Items
+  - Starting at 20 Locations
+  - 10 Users
+  - 500 Documents (unlimited sharing)
+  - 1,500 Events per month
+  - 4 years Data retention
+  - Create & Share Data templates
+  - Multi-commodity support
+  - Blockchain enabled
+  - Multi-account access
+  - Digital Traceability Web dashboard
+  - Mobile app
+  - Dynamic data management
+  - EPCIS / GDST
+  - Polygons (GeoJSON)
+  - Receiving log
+  - Shipping log
+  - FSMA 204 compliance
+  - Supplier management
+  - Labeling PTI compliant labels
+  - GS1-128 barcodes
+  - DataMatrix barcodes
+  - Voice Pick Codes
+  - Create case & pallet labels
+  - SSCC (Serialized Shipping Container Codes)
+  - Supplier Management Purchase order tracking
+  - Supplier guidelines
+  - Share trade items (coming soon)
+  - Invite suppliers for free plans
+  - Custom branded supplier portal
+  - Use your own supplier portal domain
+  - 'Interoperability & API Frameworks: EPCIS / GDST Connect to trade partners Wholechain only'
+  - Send data to other systems
+  - 'Receive data from other systems Formats: CSV, XML and JSON'
+  - Receive data via email, SFTP or API
+  - Premium integrations
+  - API access
+  - Add-on Incoming shipment data via supplier portal
+  - Help center access
+  - Help Docs All + Phone
+  limits:
+  - name: Products / Trade Items
+    limit_text: Starting at 20
+  - name: Locations
+    limit_text: Starting at 20
+  - name: Users
+    limit_text: '10'
+  - name: Documents (unlimited sharing)
+    limit_text: '500'
+  - name: Events per month
+    limit_text: 1,500
+- name: Enterprise
+  price_text: Contact Sales
+  features:
+  - Custom Products / Trade Items
+  - Custom Locations
+  - Custom Users
+  - Custom Documents (unlimited sharing)
+  - Starting at 2,500 Events per month
+  - Custom Data retention
+  - Create & Share Data templates
+  - Multi-commodity support
+  - Blockchain enabled
+  - Multi-account access
+  - Digital Traceability Web dashboard
+  - Mobile app
+  - Dynamic data management
+  - EPCIS / GDST
+  - Polygons (GeoJSON)
+  - Receiving log
+  - Shipping log
+  - FSMA 204 compliance
+  - Supplier management
+  - Labeling PTI compliant labels
+  - GS1-128 barcodes
+  - DataMatrix barcodes
+  - Voice Pick Codes
+  - Create case & pallet labels
+  - SSCC (Serialized Shipping Container Codes)
+  - Supplier Management Purchase order tracking
+  - Supplier guidelines
+  - Share trade items (coming soon)
+  - Invite suppliers for free plans
+  - Custom branded supplier portal
+  - Use your own supplier portal domain
+  - 'Interoperability & API Frameworks: EPCIS / GDST Connect to trade partners Wholechain only'
+  - Send data to other systems
+  - 'Receive data from other systems Formats: CSV, XML and JSON'
+  - Receive data via email, SFTP or API
+  - Premium integrations
+  - API access
+  - Add-on Incoming shipment data via supplier portal
+  - Help center access
+  - Help Docs All + Phone
+  - All + Account Manage
+  limits:
+  - name: Products / Trade Items
+    limit_text: Custom
+  - name: Locations
+    limit_text: Custom
+  - name: Users
+    limit_text: Custom
+  - name: Documents (unlimited sharing)
+    limit_text: Custom
+  - name: Events per month
+    limit_text: Starting at 2,500
+docs: https://wholechain.com/pricing

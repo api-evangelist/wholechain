@@ -1,0 +1,191 @@
+generated: '2026-10-18'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 14
+  own: 10
+  other_domain: 0
+  platform: 4
+  roles:
+  - api
+  - identity
+  - other
+  - portal
+  - sandbox
+  - source
+  - status
+  - support
+  - website
+hosts:
+- host: api.wholechain.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: wholechain.com
+  role: api
+  relation: own
+- host: app.wholechain.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Login
+  serves: []
+  registrable_domain: wholechain.com
+  role: identity
+  relation: own
+- host: connect.wholechain.com
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: wholechain.com
+  role: other
+  relation: own
+- host: dashboard.wholechain.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: wholechain.com
+  role: other
+  relation: own
+- host: developers.wholechain.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - DeveloperPortal
+  - Documentation
+  - GettingStarted
+  - APIReference
+  serves:
+  - docs
+  - cdn
+  - hosting
+  title: Welcome to Wholechain - Developer Docs
+  status: 200
+  vendor: fastly
+  registrable_domain: wholechain.com
+  role: portal
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: sandbox.wholechain.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: wholechain.com
+  role: sandbox
+  relation: own
+- host: status.wholechain.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  - vendor-detect
+  types:
+  - StatusPage
+  serves:
+  - status-page
+  vendor: betterstack
+  registrable_domain: wholechain.com
+  role: status
+  relation: own
+- host: support.wholechain.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  - vendor-detect
+  types:
+  - Support
+  serves:
+  - support
+  vendor: helpscout
+  registrable_domain: wholechain.com
+  role: support
+  relation: own
+- host: trust.wholechain.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  types:
+  - TrustCenter
+  serves: []
+  registrable_domain: wholechain.com
+  role: other
+  relation: own
+- host: wholechain.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  - Blog
+  - Pricing
+  - TermsOfService
+  - PrivacyPolicy
+  serves: []
+  registrable_domain: wholechain.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.youtube.com
+  found_by:
+  - pointer
+  types:
+  - YouTube
+  serves: []
+  registrable_domain: youtube.com
+  role: other
+  relation: platform
+- host: x.com
+  found_by:
+  - pointer
+  types:
+  - X
+  serves: []
+  registrable_domain: x.com
+  role: other
+  relation: platform

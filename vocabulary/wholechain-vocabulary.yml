@@ -1,0 +1,437 @@
+generated: '2026-10-18'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/wholechain-openapi.yml
+vocabulary:
+  name: Wholechain Domain Vocabulary
+  description: 'Terms declared by Wholechain''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-18'
+  terms:
+  - term: FluentValidation.Results.ValidationFailure
+    definition: 'Object declared by the contract with fields: propertyName, errorMessage, attemptedValue, customState, severity, errorCode, formattedMessagePlaceholderValues.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/FluentValidation.Results.ValidationFailure
+  - term: FluentValidation.Severity
+    definition: 'Enumeration declared by the contract with values: Error, Warning, Info.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/FluentValidation.Severity
+  - term: Microsoft.AspNetCore.Mvc.ProblemDetails
+    definition: 'Object declared by the contract with fields: type, title, status, detail, instance.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails
+  - term: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus
+    definition: 'Enumeration declared by the contract with values: Unhealthy, Degraded, Healthy.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus
+  - term: System.Exception
+    definition: 'Object declared by the contract with fields: targetSite, message, data, innerException, helpLink, source, hResult, stackTrace.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Exception
+  - term: System.ModuleHandle
+    definition: 'Object declared by the contract with fields: mdStreamVersion.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.ModuleHandle
+  - term: System.Net.HttpStatusCode
+    definition: 'Enumeration declared by the contract with values: Continue, SwitchingProtocols, Processing, EarlyHints, OK, Created, Accepted,
+      NonAuthoritativeInformation, NoContent, ResetContent, PartialContent, MultiStatus. (49 more)'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Net.HttpStatusCode
+  - term: System.Reflection.Assembly
+    definition: 'Object declared by the contract with fields: definedTypes, exportedTypes, codeBase, entryPoint, fullName, imageRuntimeVersion,
+      isDynamic, location, reflectionOnly, isCollectible, isFullyTrusted, customAttributes. (6 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.Assembly
+  - term: System.Reflection.CallingConventions
+    definition: 'Enumeration declared by the contract with values: Standard, VarArgs, Any, HasThis, ExplicitThis.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.CallingConventions
+  - term: System.Reflection.ConstructorInfo
+    definition: 'Object declared by the contract with fields: name, declaringType, reflectedType, module, customAttributes, isCollectible, metadataToken,
+      attributes, methodImplementationFlags, callingConvention, isAbstract, isConstructor. (20 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.ConstructorInfo
+  - term: System.Reflection.CustomAttributeData
+    definition: 'Object declared by the contract with fields: attributeType, constructor, constructorArguments, namedArguments.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.CustomAttributeData
+  - term: System.Reflection.CustomAttributeNamedArgument
+    definition: 'Object declared by the contract with fields: memberInfo, typedValue, memberName, isField.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.CustomAttributeNamedArgument
+  - term: System.Reflection.CustomAttributeTypedArgument
+    definition: 'Object declared by the contract with fields: argumentType, value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.CustomAttributeTypedArgument
+  - term: System.Reflection.EventAttributes
+    definition: 'Enumeration declared by the contract with values: None, SpecialName, RTSpecialName.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.EventAttributes
+  - term: System.Reflection.EventInfo
+    definition: 'Object declared by the contract with fields: name, declaringType, reflectedType, module, customAttributes, isCollectible, metadataToken,
+      memberType, attributes, isSpecialName, addMethod, removeMethod. (3 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.EventInfo
+  - term: System.Reflection.FieldAttributes
+    definition: 'Enumeration declared by the contract with values: PrivateScope, Private, FamANDAssem, Assembly, Family, FamORAssem, Public, FieldAccessMask,
+      Static, InitOnly, Literal, NotSerialized. (7 more)'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.FieldAttributes
+  - term: System.Reflection.FieldInfo
+    definition: 'Object declared by the contract with fields: name, declaringType, reflectedType, module, customAttributes, isCollectible, metadataToken,
+      memberType, attributes, fieldType, isInitOnly, isLiteral. (14 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.FieldInfo
+  - term: System.Reflection.GenericParameterAttributes
+    definition: 'Enumeration declared by the contract with values: None, Covariant, Contravariant, VarianceMask, ReferenceTypeConstraint, NotNullableValueTypeConstraint,
+      DefaultConstructorConstraint, SpecialConstraintMask, AllowByRefLike.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.GenericParameterAttributes
+  - term: System.Reflection.MemberInfo
+    definition: 'Object declared by the contract with fields: memberType, name, declaringType, reflectedType, module, customAttributes, isCollectible,
+      metadataToken.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MemberInfo
+  - term: System.Reflection.MemberTypes
+    definition: 'Enumeration declared by the contract with values: Constructor, Event, Field, Method, Property, TypeInfo, Custom, NestedType,
+      All.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MemberTypes
+  - term: System.Reflection.MethodAttributes
+    definition: 'Enumeration declared by the contract with values: PrivateScope, Private, FamANDAssem, Assembly, Family, FamORAssem, Public, MemberAccessMask,
+      UnmanagedExport, Static, Final, Virtual. (10 more)'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MethodAttributes
+  - term: System.Reflection.MethodBase
+    definition: 'Object declared by the contract with fields: memberType, name, declaringType, reflectedType, module, customAttributes, isCollectible,
+      metadataToken, attributes, methodImplementationFlags, callingConvention, isAbstract. (20 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MethodBase
+  - term: System.Reflection.MethodImplAttributes
+    definition: 'Enumeration declared by the contract with values: IL, Native, OPTIL, CodeTypeMask, ManagedMask, NoInlining, ForwardRef, Synchronized,
+      NoOptimization, PreserveSig, AggressiveInlining, AggressiveOptimization. (2 more)'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MethodImplAttributes
+  - term: System.Reflection.MethodInfo
+    definition: 'Object declared by the contract with fields: name, declaringType, reflectedType, module, customAttributes, isCollectible, metadataToken,
+      attributes, methodImplementationFlags, callingConvention, isAbstract, isConstructor. (23 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.MethodInfo
+  - term: System.Reflection.Module
+    definition: 'Object declared by the contract with fields: assembly, fullyQualifiedName, name, mdStreamVersion, moduleVersionId, scopeName,
+      moduleHandle, customAttributes, metadataToken.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.Module
+  - term: System.Reflection.ParameterAttributes
+    definition: 'Enumeration declared by the contract with values: None, In, Out, Lcid, Retval, Optional, HasDefault, HasFieldMarshal, Reserved3,
+      Reserved4, ReservedMask.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.ParameterAttributes
+  - term: System.Reflection.ParameterInfo
+    definition: 'Object declared by the contract with fields: attributes, member, name, parameterType, position, isIn, isLcid, isOptional, isOut,
+      isRetval, defaultValue, rawDefaultValue. (3 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.ParameterInfo
+  - term: System.Reflection.PropertyAttributes
+    definition: 'Enumeration declared by the contract with values: None, SpecialName, RTSpecialName, HasDefault, Reserved2, Reserved3, Reserved4,
+      ReservedMask.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.PropertyAttributes
+  - term: System.Reflection.PropertyInfo
+    definition: 'Object declared by the contract with fields: name, declaringType, reflectedType, module, customAttributes, isCollectible, metadataToken,
+      memberType, propertyType, attributes, isSpecialName, canRead. (3 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.PropertyInfo
+  - term: System.Reflection.TypeAttributes
+    definition: 'Enumeration declared by the contract with values: NotPublic, Public, NestedPublic, NestedPrivate, NestedFamily, NestedAssembly,
+      NestedFamANDAssem, VisibilityMask, SequentialLayout, ExplicitLayout, LayoutMask, Interface. (14 more)'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.TypeAttributes
+  - term: System.Reflection.TypeInfo
+    definition: 'Object declared by the contract with fields: name, customAttributes, isCollectible, metadataToken, memberType, namespace, assemblyQualifiedName,
+      fullName, assembly, module, isInterface, isNested. (70 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Reflection.TypeInfo
+  - term: System.Runtime.InteropServices.LayoutKind
+    definition: 'Enumeration declared by the contract with values: Sequential, Explicit, Auto.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Runtime.InteropServices.LayoutKind
+  - term: System.Runtime.InteropServices.StructLayoutAttribute
+    definition: 'Object declared by the contract with fields: typeId, value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Runtime.InteropServices.StructLayoutAttribute
+  - term: System.RuntimeFieldHandle
+    definition: 'Object declared by the contract with fields: value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.RuntimeFieldHandle
+  - term: System.RuntimeMethodHandle
+    definition: 'Object declared by the contract with fields: value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.RuntimeMethodHandle
+  - term: System.RuntimeTypeHandle
+    definition: 'Object declared by the contract with fields: value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.RuntimeTypeHandle
+  - term: System.Security.SecurityRuleSet
+    definition: 'Enumeration declared by the contract with values: None, Level1, Level2.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Security.SecurityRuleSet
+  - term: System.Type
+    definition: 'Object declared by the contract with fields: name, customAttributes, isCollectible, metadataToken, memberType, namespace, assemblyQualifiedName,
+      fullName, assembly, module, isInterface, isNested. (61 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/System.Type
+  - term: Wholechain.API.Contracts.Common.AddressContract
+    definition: 'Object declared by the contract with fields: city, state, country, addressLine1, addressLine2, postalCode, geoCoordinates, displayAddress.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Common.AddressContract
+  - term: Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract
+    definition: Enum that represents different blockchain providers.
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract
+  - term: Wholechain.API.Contracts.Common.GeoCoordinatesContract
+    definition: 'Object declared by the contract with fields: latitude, longitude.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo
+    definition: 'Object declared by the contract with fields: type, standard, agency, value, identification.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent
+    definition: 'Object declared by the contract with fields: id, purchaseOrder, invoiceNumber, bizStep, readPoint, disposition, referenceDocumentId,
+      referenceDocumentType, documentIds, eventTime, eventTimeZone, customProperties. (1 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation
+    definition: 'Object declared by the contract with fields: location, quantity.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation
+    definition: 'Object declared by the contract with fields: id, urn, details, updateIfExists.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData
+    definition: 'Object declared by the contract with fields: name, namespace, value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails
+    definition: 'Object declared by the contract with fields: tradePartner, name, gln, dunsPlus4, identifier, extension, captainsName, address,
+      contact, ContactInformation, vessel, licenseNumber. (3 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct
+    definition: 'Object declared by the contract with fields: id, urn, details, updateIfExists.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification
+    definition: 'Object declared by the contract with fields: identifier, name, description.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails
+    definition: 'Object declared by the contract with fields: name, simpleUnitOfMeasurement, unitQuantity, sharingPolicy, productIdentifierType,
+      unitDescriptor, gtin, productMasterData, MasterData, plu, productBrand, productCommodity.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder
+    definition: 'Object declared by the contract with fields: purchaseOrderId, revisionId, purchaseOrderNumber, poType, shipFromTradePartner,
+      shipFromLocation, shipToTradePartner, shipToLocation, purposeCode, poTypeCode, purchaseOrderDate, requestedDeliveryDate. (7 more)'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem
+    definition: 'Object declared by the contract with fields: product, quantityOrdered, unitOfMeasure, unitPrice, priceBasisCode, packSize, storeAllocations.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent
+    definition: 'Object declared by the contract with fields: eventType, purchaseOrderNumber, eventDate, originLocation, products, tlcSource.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct
+    definition: 'Object declared by the contract with fields: id, name, urn, gtin.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct
+    definition: 'Object declared by the contract with fields: id, name, urn.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner
+    definition: 'Object declared by the contract with fields: id, urn, name, pgln, connectionType, duns.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty
+    definition: 'Object declared by the contract with fields: name, namespace, value.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty
+  - term: Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest
+    definition: Request body for PUT Products/External. Same as Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct but without
+      UpdateIfExists (always treated as true for updates).
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest
+  - term: Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus
+    definition: 'Enumeration declared by the contract with values: Created, Skipped, Overridden, Updated.'
+    tags:
+    - Enumeration
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus
+  - term: Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity
+    definition: 'Object declared by the contract with fields: locationId, locationName, quantityAvailable, eventDate.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity
+  - term: Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot
+    definition: 'Object declared by the contract with fields: lotSerial, inventory.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot
+  - term: Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct
+    definition: 'Object declared by the contract with fields: productId, productName, lots.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct
+  - term: Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse
+    definition: 'Object declared by the contract with fields: products.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse
+  - term: Wholechain.API.Contracts.Connect.Integration.ContainerResult
+    definition: 'Object declared by the contract with fields: id, urn, sscc.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ContainerResult
+  - term: Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse
+    definition: 'Object declared by the contract with fields: products, locations, tradePartners, events.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse
+  - term: Wholechain.API.Contracts.Connect.Integration.EventResult
+    definition: 'Object declared by the contract with fields: status, id, name, urn, type, eventDate, productInstances, containers.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.EventResult
+  - term: Wholechain.API.Contracts.Connect.Integration.LocationResult
+    definition: 'Object declared by the contract with fields: status, id, name, urn, gln, geoCoordinates.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.LocationResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessError
+    definition: 'Object declared by the contract with fields: statusCode, message, extensions.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessError
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult
+    definition: 'Object declared by the contract with fields: reason, missingLots.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult
+    definition: 'Object declared by the contract with fields: lotSerial, productIdentifier, requestedQuantity, missingQuantity.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult
+    definition: 'Object declared by the contract with fields: documentId, reason.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult
+    definition: 'Object declared by the contract with fields: reason, message.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult
+    definition: 'Object declared by the contract with fields: id, externalEventId, type, status, eventDate, productInstances, containers, directShipFallback,
+      externalShipmentFailure, documentsNotAttached.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse
+    definition: 'Object declared by the contract with fields: message, result, locations, products, errors, validations.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult
+    definition: 'Object declared by the contract with fields: id, status.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult
+    definition: 'Object declared by the contract with fields: id, status.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult
+    definition: 'Object declared by the contract with fields: status, id, name, urn, quantity, lotSerial.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ProductResult
+    definition: 'Object declared by the contract with fields: status, id, name, urn, gtin.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProductResult
+  - term: Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest
+    definition: 'Object declared by the contract with fields: purchaseOrderId, revisionId, action.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest
+  - term: Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest
+    definition: 'Object declared by the contract with fields: purchaseOrderId, enableRevision.'
+    tags:
+    - Object
+    source: openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest

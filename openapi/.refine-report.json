@@ -1,0 +1,49 @@
+{
+  "provider": "wholechain",
+  "sources": [
+    "_original/wholechain-connect-swagger.json",
+    "wholechain-openapi.yml"
+  ],
+  "outputs": [
+    "wholechain-connect-api-openapi.yml",
+    "wholechain-epcis-interface-api-openapi.yml",
+    "wholechain-epcis-legacy-interface-api-openapi.yml",
+    "wholechain-edi-api-openapi.yml",
+    "wholechain-events-api-openapi.yml",
+    "wholechain-externaloauth-api-openapi.yml",
+    "wholechain-health-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/wholechain-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "wholechain-connect-swagger.json: upgraded openapi 3.0.4 -> OpenAPI 3.2.0",
+    "wholechain-connect-swagger.json: declared missing tag: Connect",
+    "wholechain-connect-swagger.json: declared missing tag: EPCIS Interface",
+    "wholechain-connect-swagger.json: declared missing tag: EPCIS Legacy Interface",
+    "wholechain-connect-swagger.json: declared missing tag: Edi",
+    "wholechain-connect-swagger.json: declared missing tag: Events",
+    "wholechain-connect-swagger.json: declared missing tag: ExternalOAuth",
+    "wholechain-connect-swagger.json: declared missing tag: Health",
+    "wholechain-openapi.yml: upgraded openapi 3.0.4 -> OpenAPI 3.2.0",
+    "wholechain-openapi.yml: declared missing tag: Connect",
+    "wholechain-openapi.yml: declared missing tag: EPCIS Interface",
+    "wholechain-openapi.yml: declared missing tag: EPCIS Legacy Interface",
+    "wholechain-openapi.yml: declared missing tag: Edi",
+    "wholechain-openapi.yml: declared missing tag: Events",
+    "wholechain-openapi.yml: declared missing tag: ExternalOAuth",
+    "wholechain-openapi.yml: declared missing tag: Health",
+    "tag 'Connect' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'EPCIS Interface' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'EPCIS Legacy Interface' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'Edi' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'Events' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'ExternalOAuth' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "tag 'Health' spans 2 source specs (wholechain-connect-swagger.json, wholechain-openapi.yml): per-path servers applied",
+    "apis.yml register: written (+7 apis, 7 total)"
+  ],
+  "skipped": []
+}

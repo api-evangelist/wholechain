@@ -1,0 +1,726 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-api-contracts-events-responses-paginated-event-details-response-schema.json",
+  "title": "Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse",
+  "type": "object",
+  "properties": {
+    "totalPages": {
+      "type": "integer",
+      "format": "int32",
+      "readOnly": true
+    },
+    "pageNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "totalItems": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "results": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.EventDetailResponse"
+      }
+    },
+    "hasNextPage": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasPreviousPage": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Wholechain.API.Contracts.Common.AddressContract": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "addressLine1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "addressLine2": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postalCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geoCoordinates": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Common.GeoCoordinatesContract"
+        },
+        "displayAddress": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Common.GeoCoordinatesContract": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract": {
+      "enum": [
+        "ILMD",
+        "Extension",
+        "Mda",
+        "Custom"
+      ],
+      "type": "string",
+      "description": "Locates where the custom data is located in the EPCIS XML."
+    },
+    "Wholechain.API.Contracts.Events.Enums.EventTypeContract": {
+      "enum": [
+        "Commission",
+        "Observe",
+        "Ship",
+        "Transform",
+        "Aggregation",
+        "Decommission",
+        "Disaggregation",
+        "Receive"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Events.Enums.TransformationTypeContract": {
+      "enum": [
+        "Input",
+        "Output"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract": {
+      "required": [
+        "reason"
+      ],
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "declarationTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "correctingEventID": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Responses.EventDetailResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "eventId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "instanceId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "isContainer": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "containerId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "deprecated": true
+        },
+        "containerIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "containerEntityId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "eventType": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Enums.EventTypeContract"
+        },
+        "externalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "traceabilityLotCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "referenceDocumentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "referenceDocumentType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tlcSource": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract"
+        },
+        "lotSerial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quantity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "locationName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "companyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "eventLoggedDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "unitOfMeasure": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract"
+        },
+        "identifierType": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract"
+        },
+        "unitDescriptor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unitQuantity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "businessStep": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "disposition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "invoiceNumber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eventTimezoneOffset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "purchaseOrder": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Common.AddressContract"
+        },
+        "masterData": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.EventMasterDataContract"
+          }
+        },
+        "certifications": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract"
+          }
+        },
+        "instanceMasterData": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract"
+          }
+        },
+        "productMasterData": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Products.ProductMasterDataContract"
+          }
+        },
+        "transformType": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Enums.TransformationTypeContract"
+        },
+        "errorDeclaration": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "locationExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tradePartnerExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipFromLocationName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipToLocationName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipFromLocationExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipToLocationExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipFromTradePartnerName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipFromTradePartnerExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipToTradePartnerName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shipToTradePartnerExternalIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Responses.EventMasterDataContract": {
+      "type": "object",
+      "properties": {
+        "keyDataElementDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional reference to a KDE definition. When provided, this ties the master data\nto a specific KDE for data policy validation and reporting.",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "propertyLocation": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract": {
+      "type": "object",
+      "properties": {
+        "locationName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "companyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line2": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postalCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geoCoordinates": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Common.GeoCoordinatesContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract": {
+      "enum": [
+        "Identifier",
+        "MasterData"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "elementId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "keyDataElementDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "standard": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identification": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract": {
+      "enum": [
+        "Lot",
+        "Serial"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract": {
+      "enum": [
+        "Kgm",
+        "Lbs",
+        "Cases",
+        "Units",
+        "Item",
+        "Lbr",
+        "Pint",
+        "Each",
+        "Bags",
+        "Boxes",
+        "Dozens",
+        "Gallons",
+        "Ounces",
+        "Packs",
+        "Quarts",
+        "Bushels",
+        "Trays",
+        "Tubs",
+        "Sides",
+        "Loins"
+      ],
+      "type": "string",
+      "description": "Simple units of measurement for products."
+    },
+    "Wholechain.API.Contracts.Products.ProductMasterDataContract": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "elementId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        },
+        "keyDataElementDefinitionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

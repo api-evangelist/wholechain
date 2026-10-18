@@ -1,0 +1,18 @@
+generated: '2026-10-18'
+method: searched
+generator: extract-docs-artifacts.py (deepseek)
+source: https://developers.wholechain.com/GettingStarted/SandboxSetup/
+sources:
+- https://developers.wholechain.com/GettingStarted/SandboxSetup/
+description: A sandbox environment is a dedicated space for developers to safely test and experiment with the Wholechain API without affecting
+  the live system or real data. It acts as an isolated environment where you can make API requests, run test scenarios, and experiment with new
+  features or configurations, mimicking the production environment as closely as possible.
+modes:
+- name: sandbox
+  base_url: https://sandbox.wholechain.com
+  how_to_get_access: Navigate to https://sandbox.wholechain.com, log in using your existing Wholechain credentials from your main account, and
+    click 'Create Account' after providing company details.
+note: The page mentions using a sandbox API key for testing API calls, but doesn't provide specific key formats or prefixes. It also mentions
+  visiting the Authentication page for details on where to find the sandbox API key.
+docs:
+- https://developers.wholechain.com/GettingStarted/SandboxSetup/

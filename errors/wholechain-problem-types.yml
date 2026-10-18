@@ -1,0 +1,18 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.wholechain.com/GettingStarted/HTTP_status_codes/
+format: HTTP status codes
+problems:
+- status: 200
+  title: OK
+  description: This status code indicates that your request was successfully processed by the server. The server has understood and fulfilled the request, and the response contains the requested data or confirmation of a completed action.
+  remediation: No action needed - request was successful.
+- status: 400
+  title: Bad Request
+  description: This indicates that there is an issue with the request sent by the client (your system). The server could not understand the request due to invalid syntax or missing required information.
+  remediation: Double-check the syntax and required fields in your API request.
+- status: 500
+  title: Internal Server Error
+  description: This code signals that the server encountered an error or unexpected condition that prevented it from processing the request. This is usually due to a problem on the server's side, not an issue with your request.
+  remediation: Try your request again later as these issues are typically temporary.
+note: The documentation only covers basic HTTP status codes (200, 400, 500) without specific error codes or structured error responses. No decline codes or payment-specific error codes are documented as this is not a payments API.

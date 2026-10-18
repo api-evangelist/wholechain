@@ -1,0 +1,68 @@
+generated: '2026-10-18'
+method: searched
+source:
+- https://wholechain.com/privacy
+- https://wholechain.com/terms
+- https://trust.wholechain.com/
+signals:
+  data_subject_request:
+    url: https://wholechain.com/privacy
+    section: Your Data Protection Rights under the General Data Protection Regulation (GDPR)
+    note: EEA residents get access, rectification, deletion, objection, restriction, portability and withdrawal-of-consent rights, mostly self-service in account settings or by contacting Wholechain. The policy names no DSR form or dedicated email; its contact link points to envisible.co/contact.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: The right to access, update or delete the information we have on you. Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section. If you are unable to perform these actions yourself, please contact us to assist you.
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: The right to data portability. You have the right to be provided with a copy of the information we have on you in a structured, machine-readable and commonly used format.
+  data_retention:
+    url: https://wholechain.com/privacy
+    note: Retention is defined by purpose ("only for as long as is necessary"), with no fixed periods. The trust center also lists a "Data retention procedures established" control, but that label is too short to quote as evidence.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Wholechain, Inc. will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy.
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of our Service, or we are legally obligated to retain this data for longer periods.
+  data_residency:
+    url: https://wholechain.com/privacy
+    note: Data is processed in the United States. There is no choice of region; the policy relies on the user's consent for cross-border transfer.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.
+  global_privacy_control:
+    url: https://wholechain.com/privacy
+    section: Our Policy on "Do Not Track" Signals under the California Online Protection Act (CalOPPA)
+    note: This is a denial. The policy says it does not honor Do Not Track and does not mention Global Privacy Control at all.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We do not support Do Not Track ("DNT"). Do Not Track is a preference you can set in your web browser to inform websites that you do not want to be tracked.
+  age_assurance:
+    url: https://wholechain.com/privacy
+    note: The service is not directed at anyone under 18. Wholechain relies on not knowingly collecting minors' data and deleting it afterwards; it describes no age-verification mechanism.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: We do not knowingly collect personally identifiable information from anyone under the age of 18.
+  subprocessors:
+    url: https://wholechain.com/privacy
+    note: The policy only acknowledges third-party Service Providers (analytics, remarketing, payment processors) in general terms. There is no named subprocessor list and no change-notification commitment.
+    evidence:
+    - source: https://wholechain.com/privacy
+      http_status: 200
+      fetched: '2026-10-18'
+      quote: These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+note: >-
+  Sources were the privacy policy (generic GDPR/CalOPPA template), the Terms (Michigan law; customer keeps ownership of its data but grants Wholechain a terminable license and agrees uploaded information "is available for public disclosure"), and the Vanta-style trust center at trust.wholechain.com (control labels only, e.g. "Customer data deleted upon leaving"; resources need a request for access).
+  None of the pages had incident/breach notification, data export or exit assistance, AI transparency, accessibility conformance, SBOM, transparency report or support-lifetime language.

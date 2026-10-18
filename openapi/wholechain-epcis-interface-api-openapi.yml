@@ -1,0 +1,461 @@
+openapi: 3.2.0
+info:
+  title: Wholechain EPCIS Interface API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged EPCIS Interface across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: EPCIS Interface
+paths:
+  /epcis/Capture:
+    post:
+      tags:
+      - EPCIS Interface
+      operationId: Capture
+      parameters:
+      - name: GS1-EPCIS-Version
+        in: header
+        schema:
+          type: string
+      - name: GS1-CBV-Version
+        in: header
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      - name: GS1-Capture-Error-Behavior
+        in: header
+        schema:
+          type: string
+          default: rollback
+      - name: GS1-Extensions
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/xml:
+            schema: {}
+          text/xml:
+            schema: {}
+          application/json:
+            schema: {}
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '406':
+          description: Not Acceptable
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '413':
+          description: Content Too Large
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '415':
+          description: Unsupported Media Type
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Capture
+      x-summary-source: derived
+    get:
+      tags:
+      - EPCIS Interface
+      operationId: ListCaptureStatus
+      parameters:
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+      - name: GS1-EPCIS-Min
+        in: header
+        schema:
+          type: string
+      - name: GS1-EPCIS-Max
+        in: header
+        schema:
+          type: string
+      - name: GS1-Extensions
+        in: header
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      - name: perPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 30
+      responses:
+        '200':
+          description: OK
+      summary: List capture status
+      x-summary-source: derived
+  /epcis/Capture/{captureId}:
+    get:
+      tags:
+      - EPCIS Interface
+      operationId: GetCaptureStatus
+      parameters:
+      - name: captureId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: GS1-EPCIS-Min
+        in: header
+        schema:
+          type: string
+      - name: GS1-EPCIS-Max
+        in: header
+        schema:
+          type: string
+      - name: GS1-Extensions
+        in: header
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Get capture status
+      x-summary-source: derived
+  /epcis:
+    get:
+      tags:
+      - EPCIS Interface
+      summary: This endpoint represents the EPCIS standards query interface for Wholechain
+      operationId: EpcisQueryInterface
+      parameters:
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+      - name: LE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: MATCH_anyEPC
+        in: query
+        schema:
+          type: string
+      - name: MATCH_anyEPCClass
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizStep
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizLocation
+        in: query
+        schema:
+          type: string
+      - name: EQ_transformationID
+        in: query
+        schema:
+          type: string
+      - name: EventTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: RecordTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: X-API-KEY
+        in: header
+        description: The api key, presumably, providing access to the requested data.
+        schema:
+          type: string
+      - name: gdstVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: perPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+  /gdst/{gdstVersion}/epcis/events:
+    get:
+      tags:
+      - EPCIS Interface
+      summary: This endpoint represents the EPCIS standards query interface for Wholechain
+      operationId: getGdstByGdstVersionEpcisEvents
+      parameters:
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+      - name: LE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: MATCH_anyEPC
+        in: query
+        schema:
+          type: string
+      - name: MATCH_anyEPCClass
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizStep
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizLocation
+        in: query
+        schema:
+          type: string
+      - name: EQ_transformationID
+        in: query
+        schema:
+          type: string
+      - name: EventTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: RecordTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: X-API-KEY
+        in: header
+        description: The api key, presumably, providing access to the requested data.
+        schema:
+          type: string
+      - name: gdstVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: perPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: EpcisQueryInterface
+  /epcis/Events:
+    get:
+      tags:
+      - EPCIS Interface
+      summary: This endpoint represents the EPCIS standards query interface for Wholechain
+      operationId: getEpcisEvents
+      parameters:
+      - name: nextPageToken
+        in: query
+        schema:
+          type: string
+      - name: LE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_recordTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LT_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GE_eventTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: MATCH_anyEPC
+        in: query
+        schema:
+          type: string
+      - name: MATCH_anyEPCClass
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizStep
+        in: query
+        schema:
+          type: string
+      - name: EQ_bizLocation
+        in: query
+        schema:
+          type: string
+      - name: EQ_transformationID
+        in: query
+        schema:
+          type: string
+      - name: EventTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: RecordTimeUpperBound
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: X-API-KEY
+        in: header
+        description: The api key, presumably, providing access to the requested data.
+        schema:
+          type: string
+      - name: gdstVersion
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: perPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+      x-operation-id-source: normalized
+      x-operation-id-original: EpcisQueryInterface
+components:
+  schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

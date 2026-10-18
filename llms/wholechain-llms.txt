@@ -1,0 +1,44 @@
+# Wholechain
+
+> Wholechain is a supply chain traceability platform helping brands, retailers, and suppliers capture, share, and verify data across food, seafood, textile, and other supply chains — supporting compliance (e.g. FSMA 204), responsible sourcing, and consumer transparency.
+
+## Product
+
+- [Traceability](https://wholechain.com/traceability): Core platform for tracking products and materials through the supply chain.
+- [Data Capture & Sharing](https://wholechain.com/data-capture-sharing): How data is collected from suppliers and shared across the chain.
+- [Transparency](https://wholechain.com/transparency): Consumer- and partner-facing transparency tools.
+- [Interoperability](https://wholechain.com/interoperability): Standards-based integration (GS1 and others) across systems.
+- [Analytics](https://wholechain.com/analytics): Reporting and insights built on traceability data.
+- [Integrations](https://wholechain.com/integrations): Third-party systems Wholechain connects with.
+- [Compliance](https://wholechain.com/compliance): Regulatory compliance support, including FSMA 204.
+- [Supplier Monitoring](https://wholechain.com/supplier-monitoring): Ongoing oversight of supplier practices and data.
+- [Responsible Sourcing](https://wholechain.com/responsible-sourcing): Tools for sourcing verification and sustainability claims.
+- [Food Traceability](https://wholechain.com/food-traceability): Traceability solutions specific to food supply chains.
+
+## Solutions by segment
+
+- [Enterprise](https://wholechain.com/enterprise): Solutions for large organizations.
+- [Small Business](https://wholechain.com/small-business): Solutions for smaller suppliers and producers.
+- [Certifiers & NGOs](https://wholechain.com/certifiers-ngos): Tools for certification bodies and NGOs.
+- [Partners](https://wholechain.com/partners): Partner ecosystem.
+
+## Company
+
+- [About](https://wholechain.com/about): Company background and mission.
+- [Pricing](https://wholechain.com/pricing): Plans and pricing.
+- [Careers](https://wholechain.com/careers): Open roles.
+- [Contact](https://wholechain.com/contact): How to get in touch.
+
+## Blog (selected)
+
+- [Wholechain first to pass capability test for global beef and leather traceability framework](https://wholechain.com/blog/wholechain-first-to-pass-capability-test-for-global-beef-and-leather-traceability-framework)
+- [Wholechain and GFSC Group partner to streamline FSMA 204 compliance](https://wholechain.com/blog/wholechain-and-gfsc-group-partner-to-streamline-fsma-204-compliance)
+- [How to know if your traceability efforts will actually meet regulatory requirements and sustainability goals](https://wholechain.com/blog/how-to-know-if-your-traceability-efforts-will-actually-meet-regulatory-requirements-and-sustainability-goals)
+- [Why transparency is essential for brand credibility](https://wholechain.com/blog/why-transparency-is-essential-for-brand-credibility)
+- [Traceability in beef and leather](https://wholechain.com/blog/traceability-in-beef-and-leather)
+- [Full blog index](https://wholechain.com/blog)
+
+## Optional
+
+- [Terms](https://wholechain.com/terms)
+- [Privacy](https://wholechain.com/privacy)

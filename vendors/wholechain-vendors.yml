@@ -1,0 +1,74 @@
+generated: '2026-10-18'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: fastly
+  name: Fastly
+  area: cdn
+  host: developers.wholechain.com
+  evidence: header:x-served-by:cache-
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: github-pages
+  name: GitHub Pages
+  area: hosting
+  host: developers.wholechain.com
+  evidence: cname:github.io
+  signal: cname
+  confidence: high
+  kin_score: []
+- vendor: betterstack
+  name: Better Stack
+  area: status-page
+  host: status.wholechain.com
+  evidence: cname:betteruptime.com
+  signal: cname
+  confidence: high
+  kin_score:
+  - status_page
+- vendor: helpscout
+  name: Help Scout
+  area: support
+  host: support.wholechain.com
+  evidence: cname:helpscoutdocs.com
+  signal: cname
+  confidence: high
+  kin_score:
+  - support_channel
+reliance:
+  areas_vendor_served:
+  - cdn
+  - hosting
+  - status-page
+  - support
+  vendor_count: 4
+  areas_observed: 12
+  share_of_observable_areas: 0.333
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: no-docs-host'
+- wholechain.com (Website)
+- developers.wholechain.com (DeveloperPortal)
+- developers.wholechain.com (Documentation)
+- developers.wholechain.com (GettingStarted)
+- developers.wholechain.com (APIReference)
+- support.wholechain.com (Support)
+- app.wholechain.com (Login)
+- status.wholechain.com (StatusPage)
+- connect.wholechain.com (baseURL)

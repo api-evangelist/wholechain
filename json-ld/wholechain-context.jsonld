@@ -1,0 +1,1695 @@
+{
+  "@context": {
+    "@vocab": "https://wholechain.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "wholechain": "https://wholechain.com/schema#",
+    "FluentValidation.Results.ValidationFailure": "wholechain:FluentValidation.Results.ValidationFailure",
+    "propertyName": {
+      "@id": "wholechain:propertyName",
+      "@type": "xsd:string"
+    },
+    "errorMessage": {
+      "@id": "wholechain:errorMessage",
+      "@type": "xsd:string"
+    },
+    "attemptedValue": {
+      "@id": "wholechain:attemptedValue"
+    },
+    "customState": {
+      "@id": "wholechain:customState"
+    },
+    "severity": {
+      "@id": "wholechain:severity",
+      "@type": "@id"
+    },
+    "errorCode": {
+      "@id": "wholechain:errorCode",
+      "@type": "xsd:string"
+    },
+    "formattedMessagePlaceholderValues": {
+      "@id": "wholechain:formattedMessagePlaceholderValues"
+    },
+    "FluentValidation.Severity": "wholechain:FluentValidation.Severity",
+    "Microsoft.AspNetCore.Mvc.ProblemDetails": "wholechain:Microsoft.AspNetCore.Mvc.ProblemDetails",
+    "type": {
+      "@id": "wholechain:type",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "wholechain:title",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "wholechain:status",
+      "@type": "xsd:integer"
+    },
+    "detail": {
+      "@id": "wholechain:detail",
+      "@type": "xsd:string"
+    },
+    "instance": {
+      "@id": "wholechain:instance",
+      "@type": "xsd:string"
+    },
+    "Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus": "wholechain:Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus",
+    "System.Exception": "wholechain:System.Exception",
+    "targetSite": {
+      "@id": "wholechain:targetSite",
+      "@type": "@id"
+    },
+    "message": {
+      "@id": "wholechain:message",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "wholechain:data"
+    },
+    "innerException": {
+      "@id": "wholechain:innerException",
+      "@type": "@id"
+    },
+    "helpLink": {
+      "@id": "wholechain:helpLink",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "wholechain:source",
+      "@type": "xsd:string"
+    },
+    "hResult": {
+      "@id": "wholechain:hResult",
+      "@type": "xsd:integer"
+    },
+    "stackTrace": {
+      "@id": "wholechain:stackTrace",
+      "@type": "xsd:string"
+    },
+    "System.ModuleHandle": "wholechain:System.ModuleHandle",
+    "mdStreamVersion": {
+      "@id": "wholechain:mdStreamVersion",
+      "@type": "xsd:integer"
+    },
+    "System.Net.HttpStatusCode": "wholechain:System.Net.HttpStatusCode",
+    "System.Reflection.Assembly": "wholechain:System.Reflection.Assembly",
+    "definedTypes": {
+      "@id": "wholechain:definedTypes",
+      "@container": "@list"
+    },
+    "exportedTypes": {
+      "@id": "wholechain:exportedTypes",
+      "@container": "@list"
+    },
+    "codeBase": {
+      "@id": "wholechain:codeBase",
+      "@type": "xsd:string"
+    },
+    "entryPoint": {
+      "@id": "wholechain:entryPoint",
+      "@type": "@id"
+    },
+    "fullName": {
+      "@id": "wholechain:fullName",
+      "@type": "xsd:string"
+    },
+    "imageRuntimeVersion": {
+      "@id": "wholechain:imageRuntimeVersion",
+      "@type": "xsd:string"
+    },
+    "isDynamic": {
+      "@id": "wholechain:isDynamic",
+      "@type": "xsd:boolean"
+    },
+    "location": {
+      "@id": "wholechain:location",
+      "@type": "xsd:string"
+    },
+    "reflectionOnly": {
+      "@id": "wholechain:reflectionOnly",
+      "@type": "xsd:boolean"
+    },
+    "isCollectible": {
+      "@id": "wholechain:isCollectible",
+      "@type": "xsd:boolean"
+    },
+    "isFullyTrusted": {
+      "@id": "wholechain:isFullyTrusted",
+      "@type": "xsd:boolean"
+    },
+    "customAttributes": {
+      "@id": "wholechain:customAttributes",
+      "@container": "@list"
+    },
+    "escapedCodeBase": {
+      "@id": "wholechain:escapedCodeBase",
+      "@type": "xsd:string"
+    },
+    "manifestModule": {
+      "@id": "wholechain:manifestModule",
+      "@type": "@id"
+    },
+    "modules": {
+      "@id": "wholechain:modules",
+      "@container": "@list"
+    },
+    "globalAssemblyCache": {
+      "@id": "wholechain:globalAssemblyCache",
+      "@type": "xsd:boolean"
+    },
+    "hostContext": {
+      "@id": "wholechain:hostContext",
+      "@type": "xsd:integer"
+    },
+    "securityRuleSet": {
+      "@id": "wholechain:securityRuleSet",
+      "@type": "@id"
+    },
+    "System.Reflection.CallingConventions": "wholechain:System.Reflection.CallingConventions",
+    "System.Reflection.ConstructorInfo": "wholechain:System.Reflection.ConstructorInfo",
+    "name": {
+      "@id": "wholechain:name",
+      "@type": "xsd:string"
+    },
+    "declaringType": {
+      "@id": "wholechain:declaringType",
+      "@type": "@id"
+    },
+    "reflectedType": {
+      "@id": "wholechain:reflectedType",
+      "@type": "@id"
+    },
+    "module": {
+      "@id": "wholechain:module",
+      "@type": "@id"
+    },
+    "metadataToken": {
+      "@id": "wholechain:metadataToken",
+      "@type": "xsd:integer"
+    },
+    "attributes": {
+      "@id": "wholechain:attributes",
+      "@type": "@id"
+    },
+    "methodImplementationFlags": {
+      "@id": "wholechain:methodImplementationFlags",
+      "@type": "@id"
+    },
+    "callingConvention": {
+      "@id": "wholechain:callingConvention",
+      "@type": "@id"
+    },
+    "isAbstract": {
+      "@id": "wholechain:isAbstract",
+      "@type": "xsd:boolean"
+    },
+    "isConstructor": {
+      "@id": "wholechain:isConstructor",
+      "@type": "xsd:boolean"
+    },
+    "isFinal": {
+      "@id": "wholechain:isFinal",
+      "@type": "xsd:boolean"
+    },
+    "isHideBySig": {
+      "@id": "wholechain:isHideBySig",
+      "@type": "xsd:boolean"
+    },
+    "isSpecialName": {
+      "@id": "wholechain:isSpecialName",
+      "@type": "xsd:boolean"
+    },
+    "isStatic": {
+      "@id": "wholechain:isStatic",
+      "@type": "xsd:boolean"
+    },
+    "isVirtual": {
+      "@id": "wholechain:isVirtual",
+      "@type": "xsd:boolean"
+    },
+    "isAssembly": {
+      "@id": "wholechain:isAssembly",
+      "@type": "xsd:boolean"
+    },
+    "isFamily": {
+      "@id": "wholechain:isFamily",
+      "@type": "xsd:boolean"
+    },
+    "isFamilyAndAssembly": {
+      "@id": "wholechain:isFamilyAndAssembly",
+      "@type": "xsd:boolean"
+    },
+    "isFamilyOrAssembly": {
+      "@id": "wholechain:isFamilyOrAssembly",
+      "@type": "xsd:boolean"
+    },
+    "isPrivate": {
+      "@id": "wholechain:isPrivate",
+      "@type": "xsd:boolean"
+    },
+    "isPublic": {
+      "@id": "wholechain:isPublic",
+      "@type": "xsd:boolean"
+    },
+    "isConstructedGenericMethod": {
+      "@id": "wholechain:isConstructedGenericMethod",
+      "@type": "xsd:boolean"
+    },
+    "isGenericMethod": {
+      "@id": "wholechain:isGenericMethod",
+      "@type": "xsd:boolean"
+    },
+    "isGenericMethodDefinition": {
+      "@id": "wholechain:isGenericMethodDefinition",
+      "@type": "xsd:boolean"
+    },
+    "containsGenericParameters": {
+      "@id": "wholechain:containsGenericParameters",
+      "@type": "xsd:boolean"
+    },
+    "methodHandle": {
+      "@id": "wholechain:methodHandle",
+      "@type": "@id"
+    },
+    "isSecurityCritical": {
+      "@id": "wholechain:isSecurityCritical",
+      "@type": "xsd:boolean"
+    },
+    "isSecuritySafeCritical": {
+      "@id": "wholechain:isSecuritySafeCritical",
+      "@type": "xsd:boolean"
+    },
+    "isSecurityTransparent": {
+      "@id": "wholechain:isSecurityTransparent",
+      "@type": "xsd:boolean"
+    },
+    "memberType": {
+      "@id": "wholechain:memberType",
+      "@type": "@id"
+    },
+    "System.Reflection.CustomAttributeData": "wholechain:System.Reflection.CustomAttributeData",
+    "attributeType": {
+      "@id": "wholechain:attributeType",
+      "@type": "@id"
+    },
+    "constructor": {
+      "@id": "wholechain:constructor",
+      "@type": "@id"
+    },
+    "constructorArguments": {
+      "@id": "wholechain:constructorArguments",
+      "@container": "@list"
+    },
+    "namedArguments": {
+      "@id": "wholechain:namedArguments",
+      "@container": "@list"
+    },
+    "System.Reflection.CustomAttributeNamedArgument": "wholechain:System.Reflection.CustomAttributeNamedArgument",
+    "memberInfo": {
+      "@id": "wholechain:memberInfo",
+      "@type": "@id"
+    },
+    "typedValue": {
+      "@id": "wholechain:typedValue",
+      "@type": "@id"
+    },
+    "memberName": {
+      "@id": "wholechain:memberName",
+      "@type": "xsd:string"
+    },
+    "isField": {
+      "@id": "wholechain:isField",
+      "@type": "xsd:boolean"
+    },
+    "System.Reflection.CustomAttributeTypedArgument": "wholechain:System.Reflection.CustomAttributeTypedArgument",
+    "argumentType": {
+      "@id": "wholechain:argumentType",
+      "@type": "@id"
+    },
+    "value": {
+      "@id": "wholechain:value"
+    },
+    "System.Reflection.EventAttributes": "wholechain:System.Reflection.EventAttributes",
+    "System.Reflection.EventInfo": "wholechain:System.Reflection.EventInfo",
+    "addMethod": {
+      "@id": "wholechain:addMethod",
+      "@type": "@id"
+    },
+    "removeMethod": {
+      "@id": "wholechain:removeMethod",
+      "@type": "@id"
+    },
+    "raiseMethod": {
+      "@id": "wholechain:raiseMethod",
+      "@type": "@id"
+    },
+    "isMulticast": {
+      "@id": "wholechain:isMulticast",
+      "@type": "xsd:boolean"
+    },
+    "eventHandlerType": {
+      "@id": "wholechain:eventHandlerType",
+      "@type": "@id"
+    },
+    "System.Reflection.FieldAttributes": "wholechain:System.Reflection.FieldAttributes",
+    "System.Reflection.FieldInfo": "wholechain:System.Reflection.FieldInfo",
+    "fieldType": {
+      "@id": "wholechain:fieldType",
+      "@type": "@id"
+    },
+    "isInitOnly": {
+      "@id": "wholechain:isInitOnly",
+      "@type": "xsd:boolean"
+    },
+    "isLiteral": {
+      "@id": "wholechain:isLiteral",
+      "@type": "xsd:boolean"
+    },
+    "isNotSerialized": {
+      "@id": "wholechain:isNotSerialized",
+      "@type": "xsd:boolean"
+    },
+    "isPinvokeImpl": {
+      "@id": "wholechain:isPinvokeImpl",
+      "@type": "xsd:boolean"
+    },
+    "fieldHandle": {
+      "@id": "wholechain:fieldHandle",
+      "@type": "@id"
+    },
+    "System.Reflection.GenericParameterAttributes": "wholechain:System.Reflection.GenericParameterAttributes",
+    "System.Reflection.MemberInfo": "wholechain:System.Reflection.MemberInfo",
+    "System.Reflection.MemberTypes": "wholechain:System.Reflection.MemberTypes",
+    "System.Reflection.MethodAttributes": "wholechain:System.Reflection.MethodAttributes",
+    "System.Reflection.MethodBase": "wholechain:System.Reflection.MethodBase",
+    "System.Reflection.MethodImplAttributes": "wholechain:System.Reflection.MethodImplAttributes",
+    "System.Reflection.MethodInfo": "wholechain:System.Reflection.MethodInfo",
+    "returnParameter": {
+      "@id": "wholechain:returnParameter",
+      "@type": "@id"
+    },
+    "returnType": {
+      "@id": "wholechain:returnType",
+      "@type": "@id"
+    },
+    "returnTypeCustomAttributes": {
+      "@id": "wholechain:returnTypeCustomAttributes",
+      "@type": "@id"
+    },
+    "System.Reflection.Module": "wholechain:System.Reflection.Module",
+    "assembly": {
+      "@id": "wholechain:assembly",
+      "@type": "@id"
+    },
+    "fullyQualifiedName": {
+      "@id": "wholechain:fullyQualifiedName",
+      "@type": "xsd:string"
+    },
+    "moduleVersionId": {
+      "@id": "wholechain:moduleVersionId",
+      "@type": "xsd:string"
+    },
+    "scopeName": {
+      "@id": "wholechain:scopeName",
+      "@type": "xsd:string"
+    },
+    "moduleHandle": {
+      "@id": "wholechain:moduleHandle",
+      "@type": "@id"
+    },
+    "System.Reflection.ParameterAttributes": "wholechain:System.Reflection.ParameterAttributes",
+    "System.Reflection.ParameterInfo": "wholechain:System.Reflection.ParameterInfo",
+    "member": {
+      "@id": "wholechain:member",
+      "@type": "@id"
+    },
+    "parameterType": {
+      "@id": "wholechain:parameterType",
+      "@type": "@id"
+    },
+    "position": {
+      "@id": "wholechain:position",
+      "@type": "xsd:integer"
+    },
+    "isIn": {
+      "@id": "wholechain:isIn",
+      "@type": "xsd:boolean"
+    },
+    "isLcid": {
+      "@id": "wholechain:isLcid",
+      "@type": "xsd:boolean"
+    },
+    "isOptional": {
+      "@id": "wholechain:isOptional",
+      "@type": "xsd:boolean"
+    },
+    "isOut": {
+      "@id": "wholechain:isOut",
+      "@type": "xsd:boolean"
+    },
+    "isRetval": {
+      "@id": "wholechain:isRetval",
+      "@type": "xsd:boolean"
+    },
+    "defaultValue": {
+      "@id": "wholechain:defaultValue"
+    },
+    "rawDefaultValue": {
+      "@id": "wholechain:rawDefaultValue"
+    },
+    "hasDefaultValue": {
+      "@id": "wholechain:hasDefaultValue",
+      "@type": "xsd:boolean"
+    },
+    "System.Reflection.PropertyAttributes": "wholechain:System.Reflection.PropertyAttributes",
+    "System.Reflection.PropertyInfo": "wholechain:System.Reflection.PropertyInfo",
+    "propertyType": {
+      "@id": "wholechain:propertyType",
+      "@type": "@id"
+    },
+    "canRead": {
+      "@id": "wholechain:canRead",
+      "@type": "xsd:boolean"
+    },
+    "canWrite": {
+      "@id": "wholechain:canWrite",
+      "@type": "xsd:boolean"
+    },
+    "getMethod": {
+      "@id": "wholechain:getMethod",
+      "@type": "@id"
+    },
+    "setMethod": {
+      "@id": "wholechain:setMethod",
+      "@type": "@id"
+    },
+    "System.Reflection.TypeAttributes": "wholechain:System.Reflection.TypeAttributes",
+    "System.Reflection.TypeInfo": "wholechain:System.Reflection.TypeInfo",
+    "namespace": {
+      "@id": "wholechain:namespace",
+      "@type": "xsd:string"
+    },
+    "assemblyQualifiedName": {
+      "@id": "wholechain:assemblyQualifiedName",
+      "@type": "xsd:string"
+    },
+    "isInterface": {
+      "@id": "wholechain:isInterface",
+      "@type": "xsd:boolean"
+    },
+    "isNested": {
+      "@id": "wholechain:isNested",
+      "@type": "xsd:boolean"
+    },
+    "declaringMethod": {
+      "@id": "wholechain:declaringMethod",
+      "@type": "@id"
+    },
+    "underlyingSystemType": {
+      "@id": "wholechain:underlyingSystemType",
+      "@type": "@id"
+    },
+    "isTypeDefinition": {
+      "@id": "wholechain:isTypeDefinition",
+      "@type": "xsd:boolean"
+    },
+    "isArray": {
+      "@id": "wholechain:isArray",
+      "@type": "xsd:boolean"
+    },
+    "isByRef": {
+      "@id": "wholechain:isByRef",
+      "@type": "xsd:boolean"
+    },
+    "isPointer": {
+      "@id": "wholechain:isPointer",
+      "@type": "xsd:boolean"
+    },
+    "isConstructedGenericType": {
+      "@id": "wholechain:isConstructedGenericType",
+      "@type": "xsd:boolean"
+    },
+    "isGenericParameter": {
+      "@id": "wholechain:isGenericParameter",
+      "@type": "xsd:boolean"
+    },
+    "isGenericTypeParameter": {
+      "@id": "wholechain:isGenericTypeParameter",
+      "@type": "xsd:boolean"
+    },
+    "isGenericMethodParameter": {
+      "@id": "wholechain:isGenericMethodParameter",
+      "@type": "xsd:boolean"
+    },
+    "isGenericType": {
+      "@id": "wholechain:isGenericType",
+      "@type": "xsd:boolean"
+    },
+    "isGenericTypeDefinition": {
+      "@id": "wholechain:isGenericTypeDefinition",
+      "@type": "xsd:boolean"
+    },
+    "isSZArray": {
+      "@id": "wholechain:isSZArray",
+      "@type": "xsd:boolean"
+    },
+    "isVariableBoundArray": {
+      "@id": "wholechain:isVariableBoundArray",
+      "@type": "xsd:boolean"
+    },
+    "isByRefLike": {
+      "@id": "wholechain:isByRefLike",
+      "@type": "xsd:boolean"
+    },
+    "isFunctionPointer": {
+      "@id": "wholechain:isFunctionPointer",
+      "@type": "xsd:boolean"
+    },
+    "isUnmanagedFunctionPointer": {
+      "@id": "wholechain:isUnmanagedFunctionPointer",
+      "@type": "xsd:boolean"
+    },
+    "hasElementType": {
+      "@id": "wholechain:hasElementType",
+      "@type": "xsd:boolean"
+    },
+    "genericTypeArguments": {
+      "@id": "wholechain:genericTypeArguments",
+      "@container": "@list"
+    },
+    "genericParameterPosition": {
+      "@id": "wholechain:genericParameterPosition",
+      "@type": "xsd:integer"
+    },
+    "genericParameterAttributes": {
+      "@id": "wholechain:genericParameterAttributes",
+      "@type": "@id"
+    },
+    "isImport": {
+      "@id": "wholechain:isImport",
+      "@type": "xsd:boolean"
+    },
+    "isSealed": {
+      "@id": "wholechain:isSealed",
+      "@type": "xsd:boolean"
+    },
+    "isClass": {
+      "@id": "wholechain:isClass",
+      "@type": "xsd:boolean"
+    },
+    "isNestedAssembly": {
+      "@id": "wholechain:isNestedAssembly",
+      "@type": "xsd:boolean"
+    },
+    "isNestedFamANDAssem": {
+      "@id": "wholechain:isNestedFamANDAssem",
+      "@type": "xsd:boolean"
+    },
+    "isNestedFamily": {
+      "@id": "wholechain:isNestedFamily",
+      "@type": "xsd:boolean"
+    },
+    "isNestedFamORAssem": {
+      "@id": "wholechain:isNestedFamORAssem",
+      "@type": "xsd:boolean"
+    },
+    "isNestedPrivate": {
+      "@id": "wholechain:isNestedPrivate",
+      "@type": "xsd:boolean"
+    },
+    "isNestedPublic": {
+      "@id": "wholechain:isNestedPublic",
+      "@type": "xsd:boolean"
+    },
+    "isNotPublic": {
+      "@id": "wholechain:isNotPublic",
+      "@type": "xsd:boolean"
+    },
+    "isAutoLayout": {
+      "@id": "wholechain:isAutoLayout",
+      "@type": "xsd:boolean"
+    },
+    "isExplicitLayout": {
+      "@id": "wholechain:isExplicitLayout",
+      "@type": "xsd:boolean"
+    },
+    "isLayoutSequential": {
+      "@id": "wholechain:isLayoutSequential",
+      "@type": "xsd:boolean"
+    },
+    "isAnsiClass": {
+      "@id": "wholechain:isAnsiClass",
+      "@type": "xsd:boolean"
+    },
+    "isAutoClass": {
+      "@id": "wholechain:isAutoClass",
+      "@type": "xsd:boolean"
+    },
+    "isUnicodeClass": {
+      "@id": "wholechain:isUnicodeClass",
+      "@type": "xsd:boolean"
+    },
+    "isCOMObject": {
+      "@id": "wholechain:isCOMObject",
+      "@type": "xsd:boolean"
+    },
+    "isContextful": {
+      "@id": "wholechain:isContextful",
+      "@type": "xsd:boolean"
+    },
+    "isEnum": {
+      "@id": "wholechain:isEnum",
+      "@type": "xsd:boolean"
+    },
+    "isMarshalByRef": {
+      "@id": "wholechain:isMarshalByRef",
+      "@type": "xsd:boolean"
+    },
+    "isPrimitive": {
+      "@id": "wholechain:isPrimitive",
+      "@type": "xsd:boolean"
+    },
+    "isValueType": {
+      "@id": "wholechain:isValueType",
+      "@type": "xsd:boolean"
+    },
+    "isSignatureType": {
+      "@id": "wholechain:isSignatureType",
+      "@type": "xsd:boolean"
+    },
+    "structLayoutAttribute": {
+      "@id": "wholechain:structLayoutAttribute",
+      "@type": "@id"
+    },
+    "typeInitializer": {
+      "@id": "wholechain:typeInitializer",
+      "@type": "@id"
+    },
+    "typeHandle": {
+      "@id": "wholechain:typeHandle",
+      "@type": "@id"
+    },
+    "guid": {
+      "@id": "wholechain:guid",
+      "@type": "xsd:string"
+    },
+    "baseType": {
+      "@id": "wholechain:baseType",
+      "@type": "@id"
+    },
+    "isSerializable": {
+      "@id": "wholechain:isSerializable",
+      "@type": "xsd:boolean"
+    },
+    "isVisible": {
+      "@id": "wholechain:isVisible",
+      "@type": "xsd:boolean"
+    },
+    "genericTypeParameters": {
+      "@id": "wholechain:genericTypeParameters",
+      "@container": "@list"
+    },
+    "declaredConstructors": {
+      "@id": "wholechain:declaredConstructors",
+      "@container": "@list"
+    },
+    "declaredEvents": {
+      "@id": "wholechain:declaredEvents",
+      "@container": "@list"
+    },
+    "declaredFields": {
+      "@id": "wholechain:declaredFields",
+      "@container": "@list"
+    },
+    "declaredMembers": {
+      "@id": "wholechain:declaredMembers",
+      "@container": "@list"
+    },
+    "declaredMethods": {
+      "@id": "wholechain:declaredMethods",
+      "@container": "@list"
+    },
+    "declaredNestedTypes": {
+      "@id": "wholechain:declaredNestedTypes",
+      "@container": "@list"
+    },
+    "declaredProperties": {
+      "@id": "wholechain:declaredProperties",
+      "@container": "@list"
+    },
+    "implementedInterfaces": {
+      "@id": "wholechain:implementedInterfaces",
+      "@container": "@list"
+    },
+    "System.Runtime.InteropServices.LayoutKind": "wholechain:System.Runtime.InteropServices.LayoutKind",
+    "System.Runtime.InteropServices.StructLayoutAttribute": "wholechain:System.Runtime.InteropServices.StructLayoutAttribute",
+    "typeId": {
+      "@id": "wholechain:typeId"
+    },
+    "System.RuntimeFieldHandle": "wholechain:System.RuntimeFieldHandle",
+    "System.RuntimeMethodHandle": "wholechain:System.RuntimeMethodHandle",
+    "System.RuntimeTypeHandle": "wholechain:System.RuntimeTypeHandle",
+    "System.Security.SecurityRuleSet": "wholechain:System.Security.SecurityRuleSet",
+    "System.Type": "wholechain:System.Type",
+    "Wholechain.API.Contracts.Common.AddressContract": "wholechain:Wholechain.API.Contracts.Common.AddressContract",
+    "city": {
+      "@id": "wholechain:city",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "wholechain:state",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "wholechain:country",
+      "@type": "xsd:string"
+    },
+    "addressLine1": {
+      "@id": "wholechain:addressLine1",
+      "@type": "xsd:string"
+    },
+    "addressLine2": {
+      "@id": "wholechain:addressLine2",
+      "@type": "xsd:string"
+    },
+    "postalCode": {
+      "@id": "wholechain:postalCode",
+      "@type": "xsd:string"
+    },
+    "geoCoordinates": {
+      "@id": "wholechain:geoCoordinates",
+      "@type": "@id"
+    },
+    "displayAddress": {
+      "@id": "wholechain:displayAddress",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract": "wholechain:Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract",
+    "Wholechain.API.Contracts.Common.GeoCoordinatesContract": "wholechain:Wholechain.API.Contracts.Common.GeoCoordinatesContract",
+    "latitude": {
+      "@id": "wholechain:latitude",
+      "@type": "xsd:decimal"
+    },
+    "longitude": {
+      "@id": "wholechain:longitude",
+      "@type": "xsd:decimal"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo",
+    "standard": {
+      "@id": "wholechain:standard",
+      "@type": "xsd:string"
+    },
+    "agency": {
+      "@id": "wholechain:agency",
+      "@type": "xsd:string"
+    },
+    "identification": {
+      "@id": "wholechain:identification",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent",
+    "id": {
+      "@id": "wholechain:id",
+      "@type": "xsd:string"
+    },
+    "purchaseOrder": {
+      "@id": "wholechain:purchaseOrder",
+      "@type": "xsd:string"
+    },
+    "invoiceNumber": {
+      "@id": "wholechain:invoiceNumber",
+      "@type": "xsd:string"
+    },
+    "bizStep": {
+      "@id": "wholechain:bizStep",
+      "@type": "xsd:string"
+    },
+    "readPoint": {
+      "@id": "wholechain:readPoint",
+      "@type": "xsd:string"
+    },
+    "disposition": {
+      "@id": "wholechain:disposition",
+      "@type": "xsd:string"
+    },
+    "referenceDocumentId": {
+      "@id": "wholechain:referenceDocumentId",
+      "@type": "xsd:string"
+    },
+    "referenceDocumentType": {
+      "@id": "wholechain:referenceDocumentType",
+      "@type": "xsd:string"
+    },
+    "documentIds": {
+      "@id": "wholechain:documentIds",
+      "@container": "@list"
+    },
+    "eventTime": {
+      "@id": "wholechain:eventTime",
+      "@type": "xsd:dateTime"
+    },
+    "eventTimeZone": {
+      "@id": "wholechain:eventTimeZone",
+      "@type": "xsd:string"
+    },
+    "customProperties": {
+      "@id": "wholechain:customProperties",
+      "@container": "@list"
+    },
+    "certificationList": {
+      "@id": "wholechain:certificationList",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation",
+    "quantity": {
+      "@id": "wholechain:quantity",
+      "@type": "xsd:integer"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation",
+    "urn": {
+      "@id": "wholechain:urn",
+      "@type": "xsd:string"
+    },
+    "details": {
+      "@id": "wholechain:details",
+      "@type": "@id"
+    },
+    "updateIfExists": {
+      "@id": "wholechain:updateIfExists",
+      "@type": "xsd:boolean"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData",
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails",
+    "tradePartner": {
+      "@id": "wholechain:tradePartner",
+      "@type": "@id"
+    },
+    "gln": {
+      "@id": "wholechain:gln",
+      "@type": "xsd:string"
+    },
+    "dunsPlus4": {
+      "@id": "wholechain:dunsPlus4",
+      "@type": "xsd:string"
+    },
+    "identifier": {
+      "@id": "wholechain:identifier",
+      "@type": "xsd:string"
+    },
+    "extension": {
+      "@id": "wholechain:extension",
+      "@type": "xsd:string"
+    },
+    "captainsName": {
+      "@id": "wholechain:captainsName",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "wholechain:address",
+      "@type": "@id"
+    },
+    "contact": {
+      "@id": "wholechain:contact",
+      "@type": "@id"
+    },
+    "ContactInformation": {
+      "@id": "wholechain:ContactInformation",
+      "@type": "@id"
+    },
+    "vessel": {
+      "@id": "wholechain:vessel",
+      "@type": "@id"
+    },
+    "licenseNumber": {
+      "@id": "wholechain:licenseNumber",
+      "@type": "xsd:string"
+    },
+    "locationGroup": {
+      "@id": "wholechain:locationGroup",
+      "@type": "@id"
+    },
+    "locationType": {
+      "@id": "wholechain:locationType",
+      "@type": "@id"
+    },
+    "customData": {
+      "@id": "wholechain:customData",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct",
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification",
+    "description": {
+      "@id": "wholechain:description",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails",
+    "simpleUnitOfMeasurement": {
+      "@id": "wholechain:simpleUnitOfMeasurement",
+      "@type": "xsd:string"
+    },
+    "unitQuantity": {
+      "@id": "wholechain:unitQuantity",
+      "@type": "xsd:decimal"
+    },
+    "sharingPolicy": {
+      "@id": "wholechain:sharingPolicy",
+      "@type": "xsd:string"
+    },
+    "productIdentifierType": {
+      "@id": "wholechain:productIdentifierType",
+      "@type": "xsd:string"
+    },
+    "unitDescriptor": {
+      "@id": "wholechain:unitDescriptor",
+      "@type": "xsd:string"
+    },
+    "gtin": {
+      "@id": "wholechain:gtin",
+      "@type": "xsd:string"
+    },
+    "productMasterData": {
+      "@id": "wholechain:productMasterData",
+      "@container": "@list"
+    },
+    "MasterData": {
+      "@id": "wholechain:MasterData",
+      "@container": "@list"
+    },
+    "plu": {
+      "@id": "wholechain:plu",
+      "@type": "xsd:string"
+    },
+    "productBrand": {
+      "@id": "wholechain:productBrand",
+      "@type": "@id"
+    },
+    "productCommodity": {
+      "@id": "wholechain:productCommodity",
+      "@type": "@id"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder",
+    "purchaseOrderId": {
+      "@id": "wholechain:purchaseOrderId",
+      "@type": "xsd:string"
+    },
+    "revisionId": {
+      "@id": "wholechain:revisionId",
+      "@type": "xsd:string"
+    },
+    "purchaseOrderNumber": {
+      "@id": "wholechain:purchaseOrderNumber",
+      "@type": "xsd:string"
+    },
+    "poType": {
+      "@id": "wholechain:poType",
+      "@type": "@id"
+    },
+    "shipFromTradePartner": {
+      "@id": "wholechain:shipFromTradePartner",
+      "@type": "@id"
+    },
+    "shipFromLocation": {
+      "@id": "wholechain:shipFromLocation",
+      "@type": "@id"
+    },
+    "shipToTradePartner": {
+      "@id": "wholechain:shipToTradePartner",
+      "@type": "@id"
+    },
+    "shipToLocation": {
+      "@id": "wholechain:shipToLocation",
+      "@type": "@id"
+    },
+    "purposeCode": {
+      "@id": "wholechain:purposeCode",
+      "@type": "xsd:string"
+    },
+    "poTypeCode": {
+      "@id": "wholechain:poTypeCode",
+      "@type": "xsd:string"
+    },
+    "purchaseOrderDate": {
+      "@id": "wholechain:purchaseOrderDate",
+      "@type": "xsd:dateTime"
+    },
+    "requestedDeliveryDate": {
+      "@id": "wholechain:requestedDeliveryDate",
+      "@type": "xsd:dateTime"
+    },
+    "cancelAfterDate": {
+      "@id": "wholechain:cancelAfterDate",
+      "@type": "xsd:dateTime"
+    },
+    "transportationMethod": {
+      "@id": "wholechain:transportationMethod",
+      "@type": "xsd:string"
+    },
+    "visibility": {
+      "@id": "wholechain:visibility",
+      "@type": "@id"
+    },
+    "locationShare": {
+      "@id": "wholechain:locationShare",
+      "@type": "xsd:boolean"
+    },
+    "productShare": {
+      "@id": "wholechain:productShare",
+      "@type": "xsd:boolean"
+    },
+    "lineItems": {
+      "@id": "wholechain:lineItems",
+      "@container": "@list"
+    },
+    "linkedEvents": {
+      "@id": "wholechain:linkedEvents",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem",
+    "product": {
+      "@id": "wholechain:product",
+      "@type": "@id"
+    },
+    "quantityOrdered": {
+      "@id": "wholechain:quantityOrdered",
+      "@type": "xsd:integer"
+    },
+    "unitOfMeasure": {
+      "@id": "wholechain:unitOfMeasure",
+      "@type": "@id"
+    },
+    "unitPrice": {
+      "@id": "wholechain:unitPrice",
+      "@type": "xsd:decimal"
+    },
+    "priceBasisCode": {
+      "@id": "wholechain:priceBasisCode",
+      "@type": "xsd:string"
+    },
+    "packSize": {
+      "@id": "wholechain:packSize",
+      "@type": "xsd:integer"
+    },
+    "storeAllocations": {
+      "@id": "wholechain:storeAllocations",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent",
+    "eventType": {
+      "@id": "wholechain:eventType",
+      "@type": "@id"
+    },
+    "eventDate": {
+      "@id": "wholechain:eventDate",
+      "@type": "xsd:dateTime"
+    },
+    "originLocation": {
+      "@id": "wholechain:originLocation",
+      "@type": "@id"
+    },
+    "products": {
+      "@id": "wholechain:products",
+      "@container": "@list"
+    },
+    "tlcSource": {
+      "@id": "wholechain:tlcSource",
+      "@type": "@id"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct",
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct",
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner",
+    "pgln": {
+      "@id": "wholechain:pgln",
+      "@type": "xsd:string"
+    },
+    "connectionType": {
+      "@id": "wholechain:connectionType",
+      "@type": "xsd:string"
+    },
+    "duns": {
+      "@id": "wholechain:duns",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty",
+    "Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest": "wholechain:Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest",
+    "Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus": "wholechain:Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus",
+    "Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity": "wholechain:Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity",
+    "locationId": {
+      "@id": "wholechain:locationId",
+      "@type": "xsd:string"
+    },
+    "locationName": {
+      "@id": "wholechain:locationName",
+      "@type": "xsd:string"
+    },
+    "quantityAvailable": {
+      "@id": "wholechain:quantityAvailable",
+      "@type": "xsd:decimal"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot": "wholechain:Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot",
+    "lotSerial": {
+      "@id": "wholechain:lotSerial",
+      "@type": "xsd:string"
+    },
+    "inventory": {
+      "@id": "wholechain:inventory",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct": "wholechain:Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct",
+    "productId": {
+      "@id": "wholechain:productId",
+      "@type": "xsd:string"
+    },
+    "productName": {
+      "@id": "wholechain:productName",
+      "@type": "xsd:string"
+    },
+    "lots": {
+      "@id": "wholechain:lots",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse",
+    "Wholechain.API.Contracts.Connect.Integration.ContainerResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ContainerResult",
+    "sscc": {
+      "@id": "wholechain:sscc",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse",
+    "locations": {
+      "@id": "wholechain:locations",
+      "@container": "@list"
+    },
+    "tradePartners": {
+      "@id": "wholechain:tradePartners",
+      "@container": "@list"
+    },
+    "events": {
+      "@id": "wholechain:events",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.EventResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.EventResult",
+    "productInstances": {
+      "@id": "wholechain:productInstances",
+      "@container": "@list"
+    },
+    "containers": {
+      "@id": "wholechain:containers",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.LocationResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.LocationResult",
+    "Wholechain.API.Contracts.Connect.Integration.ProcessError": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessError",
+    "statusCode": {
+      "@id": "wholechain:statusCode",
+      "@type": "@id"
+    },
+    "extensions": {
+      "@id": "wholechain:extensions"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult",
+    "reason": {
+      "@id": "wholechain:reason",
+      "@type": "xsd:string"
+    },
+    "missingLots": {
+      "@id": "wholechain:missingLots",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult",
+    "productIdentifier": {
+      "@id": "wholechain:productIdentifier",
+      "@type": "xsd:string"
+    },
+    "requestedQuantity": {
+      "@id": "wholechain:requestedQuantity",
+      "@type": "xsd:decimal"
+    },
+    "missingQuantity": {
+      "@id": "wholechain:missingQuantity",
+      "@type": "xsd:decimal"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult",
+    "documentId": {
+      "@id": "wholechain:documentId",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult",
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult",
+    "externalEventId": {
+      "@id": "wholechain:externalEventId",
+      "@type": "xsd:string"
+    },
+    "directShipFallback": {
+      "@id": "wholechain:directShipFallback",
+      "@type": "@id"
+    },
+    "externalShipmentFailure": {
+      "@id": "wholechain:externalShipmentFailure",
+      "@type": "@id"
+    },
+    "documentsNotAttached": {
+      "@id": "wholechain:documentsNotAttached",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse",
+    "result": {
+      "@id": "wholechain:result",
+      "@container": "@list"
+    },
+    "errors": {
+      "@id": "wholechain:errors",
+      "@container": "@list"
+    },
+    "validations": {
+      "@id": "wholechain:validations",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult",
+    "Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult",
+    "Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult",
+    "Wholechain.API.Contracts.Connect.Integration.ProductResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.ProductResult",
+    "Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest": "wholechain:Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest",
+    "action": {
+      "@id": "wholechain:action",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest": "wholechain:Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest",
+    "enableRevision": {
+      "@id": "wholechain:enableRevision",
+      "@type": "xsd:boolean"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.TradePartnerResult": "wholechain:Wholechain.API.Contracts.Connect.Integration.TradePartnerResult",
+    "Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse",
+    "Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse",
+    "Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectPurchaseOrderUpdate": "wholechain:Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectPurchaseOrderUpdate",
+    "Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse": "wholechain:Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse",
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse": "wholechain:Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse",
+    "certificationDefinitionId": {
+      "@id": "wholechain:certificationDefinitionId",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse": "wholechain:Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse",
+    "documentDefinitionId": {
+      "@id": "wholechain:documentDefinitionId",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse": "wholechain:Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse",
+    "keyDataElementValues": {
+      "@id": "wholechain:keyDataElementValues",
+      "@container": "@list"
+    },
+    "certifications": {
+      "@id": "wholechain:certifications",
+      "@container": "@list"
+    },
+    "documents": {
+      "@id": "wholechain:documents",
+      "@container": "@list"
+    },
+    "Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse": "wholechain:Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse",
+    "keyDataElementDefinitionId": {
+      "@id": "wholechain:keyDataElementDefinitionId",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse": "wholechain:Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse",
+    "Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResult": "wholechain:Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResult",
+    "documentType": {
+      "@id": "wholechain:documentType",
+      "@type": "xsd:string"
+    },
+    "documentTypeName": {
+      "@id": "wholechain:documentTypeName",
+      "@type": "xsd:string"
+    },
+    "fileName": {
+      "@id": "wholechain:fileName",
+      "@type": "xsd:string"
+    },
+    "fileType": {
+      "@id": "wholechain:fileType",
+      "@type": "xsd:string"
+    },
+    "expirationDate": {
+      "@id": "wholechain:expirationDate",
+      "@type": "xsd:date"
+    },
+    "company": {
+      "@id": "wholechain:company",
+      "@type": "xsd:string"
+    },
+    "privacy": {
+      "@id": "wholechain:privacy",
+      "@type": "xsd:string"
+    },
+    "error": {
+      "@id": "wholechain:error",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract": "wholechain:Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract",
+    "Wholechain.API.Contracts.Events.Enums.EventTypeContract": "wholechain:Wholechain.API.Contracts.Events.Enums.EventTypeContract",
+    "Wholechain.API.Contracts.Events.Enums.ShipmentTypeContract": "wholechain:Wholechain.API.Contracts.Events.Enums.ShipmentTypeContract",
+    "Wholechain.API.Contracts.Events.Enums.TransformationTypeContract": "wholechain:Wholechain.API.Contracts.Events.Enums.TransformationTypeContract",
+    "Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract": "wholechain:Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract",
+    "declarationTime": {
+      "@id": "wholechain:declarationTime",
+      "@type": "xsd:dateTime"
+    },
+    "correctingEventID": {
+      "@id": "wholechain:correctingEventID",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Events.Responses.EventDetailResponse": "wholechain:Wholechain.API.Contracts.Events.Responses.EventDetailResponse",
+    "eventId": {
+      "@id": "wholechain:eventId",
+      "@type": "xsd:string"
+    },
+    "instanceId": {
+      "@id": "wholechain:instanceId",
+      "@type": "xsd:string"
+    },
+    "isContainer": {
+      "@id": "wholechain:isContainer",
+      "@type": "xsd:boolean"
+    },
+    "containerId": {
+      "@id": "wholechain:containerId",
+      "@type": "xsd:string"
+    },
+    "containerIdentifier": {
+      "@id": "wholechain:containerIdentifier",
+      "@type": "xsd:string"
+    },
+    "containerEntityId": {
+      "@id": "wholechain:containerEntityId",
+      "@type": "xsd:string"
+    },
+    "externalIdentifier": {
+      "@id": "wholechain:externalIdentifier",
+      "@type": "xsd:string"
+    },
+    "traceabilityLotCode": {
+      "@id": "wholechain:traceabilityLotCode",
+      "@type": "xsd:string"
+    },
+    "companyName": {
+      "@id": "wholechain:companyName",
+      "@type": "xsd:string"
+    },
+    "eventLoggedDate": {
+      "@id": "wholechain:eventLoggedDate",
+      "@type": "xsd:dateTime"
+    },
+    "createdTime": {
+      "@id": "wholechain:createdTime",
+      "@type": "xsd:dateTime"
+    },
+    "identifierType": {
+      "@id": "wholechain:identifierType",
+      "@type": "@id"
+    },
+    "businessStep": {
+      "@id": "wholechain:businessStep",
+      "@type": "xsd:string"
+    },
+    "eventTimezoneOffset": {
+      "@id": "wholechain:eventTimezoneOffset",
+      "@type": "xsd:string"
+    },
+    "masterData": {
+      "@id": "wholechain:masterData",
+      "@container": "@list"
+    },
+    "instanceMasterData": {
+      "@id": "wholechain:instanceMasterData",
+      "@container": "@list"
+    },
+    "transformType": {
+      "@id": "wholechain:transformType",
+      "@type": "@id"
+    },
+    "errorDeclaration": {
+      "@id": "wholechain:errorDeclaration",
+      "@type": "@id"
+    },
+    "deleted": {
+      "@id": "wholechain:deleted",
+      "@type": "xsd:boolean"
+    },
+    "locationExternalIdentifier": {
+      "@id": "wholechain:locationExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "tradePartnerExternalIdentifier": {
+      "@id": "wholechain:tradePartnerExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "shipFromLocationName": {
+      "@id": "wholechain:shipFromLocationName",
+      "@type": "xsd:string"
+    },
+    "shipToLocationName": {
+      "@id": "wholechain:shipToLocationName",
+      "@type": "xsd:string"
+    },
+    "shipFromLocationExternalIdentifier": {
+      "@id": "wholechain:shipFromLocationExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "shipToLocationExternalIdentifier": {
+      "@id": "wholechain:shipToLocationExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "shipFromTradePartnerName": {
+      "@id": "wholechain:shipFromTradePartnerName",
+      "@type": "xsd:string"
+    },
+    "shipFromTradePartnerExternalIdentifier": {
+      "@id": "wholechain:shipFromTradePartnerExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "shipToTradePartnerName": {
+      "@id": "wholechain:shipToTradePartnerName",
+      "@type": "xsd:string"
+    },
+    "shipToTradePartnerExternalIdentifier": {
+      "@id": "wholechain:shipToTradePartnerExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Events.Responses.EventMasterDataContract": "wholechain:Wholechain.API.Contracts.Events.Responses.EventMasterDataContract",
+    "propertyLocation": {
+      "@id": "wholechain:propertyLocation",
+      "@type": "@id"
+    },
+    "Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse": "wholechain:Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse",
+    "totalPages": {
+      "@id": "wholechain:totalPages",
+      "@type": "xsd:integer"
+    },
+    "pageNumber": {
+      "@id": "wholechain:pageNumber",
+      "@type": "xsd:integer"
+    },
+    "pageSize": {
+      "@id": "wholechain:pageSize",
+      "@type": "xsd:integer"
+    },
+    "totalItems": {
+      "@id": "wholechain:totalItems",
+      "@type": "xsd:integer"
+    },
+    "results": {
+      "@id": "wholechain:results",
+      "@container": "@list"
+    },
+    "hasNextPage": {
+      "@id": "wholechain:hasNextPage",
+      "@type": "xsd:boolean"
+    },
+    "hasPreviousPage": {
+      "@id": "wholechain:hasPreviousPage",
+      "@type": "xsd:boolean"
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract": "wholechain:Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract",
+    "reference": {
+      "@id": "wholechain:reference",
+      "@type": "xsd:string"
+    },
+    "line1": {
+      "@id": "wholechain:line1",
+      "@type": "xsd:string"
+    },
+    "line2": {
+      "@id": "wholechain:line2",
+      "@type": "xsd:string"
+    },
+    "phone": {
+      "@id": "wholechain:phone",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract": "wholechain:Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract",
+    "Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse": "wholechain:Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse",
+    "Wholechain.API.Contracts.Jobs.Responses.JobResponse": "wholechain:Wholechain.API.Contracts.Jobs.Responses.JobResponse",
+    "jobId": {
+      "@id": "wholechain:jobId",
+      "@type": "xsd:string"
+    },
+    "payload": {
+      "@id": "wholechain:payload",
+      "@type": "xsd:string"
+    },
+    "startedAt": {
+      "@id": "wholechain:startedAt",
+      "@type": "xsd:dateTime"
+    },
+    "completedAt": {
+      "@id": "wholechain:completedAt",
+      "@type": "xsd:dateTime"
+    },
+    "success": {
+      "@id": "wholechain:success",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Jobs.Responses.JobStatusContract": "wholechain:Wholechain.API.Contracts.Jobs.Responses.JobStatusContract",
+    "Wholechain.API.Contracts.LocationGroups.Responses.LocationGroupResponse": "wholechain:Wholechain.API.Contracts.LocationGroups.Responses.LocationGroupResponse",
+    "Wholechain.API.Contracts.Locations.Enums.LocationTypeContract": "wholechain:Wholechain.API.Contracts.Locations.Enums.LocationTypeContract",
+    "Wholechain.API.Contracts.Locations.LocationContactInformationContract": "wholechain:Wholechain.API.Contracts.Locations.LocationContactInformationContract",
+    "email": {
+      "@id": "wholechain:email",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse": "wholechain:Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse",
+    "totalCount": {
+      "@id": "wholechain:totalCount",
+      "@type": "xsd:integer"
+    },
+    "Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract": "wholechain:Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract",
+    "ownerTradePartnerId": {
+      "@id": "wholechain:ownerTradePartnerId",
+      "@type": "xsd:string"
+    },
+    "ownerTradePartnerName": {
+      "@id": "wholechain:ownerTradePartnerName",
+      "@type": "xsd:string"
+    },
+    "ownerExternalIdentifier": {
+      "@id": "wholechain:ownerExternalIdentifier",
+      "@type": "xsd:string"
+    },
+    "isOwner": {
+      "@id": "wholechain:isOwner",
+      "@type": "xsd:boolean"
+    },
+    "Wholechain.API.Contracts.Locations.Responses.LocationResponse": "wholechain:Wholechain.API.Contracts.Locations.Responses.LocationResponse",
+    "accountId": {
+      "@id": "wholechain:accountId",
+      "@type": "xsd:string"
+    },
+    "tradePartnerId": {
+      "@id": "wholechain:tradePartnerId",
+      "@type": "xsd:string"
+    },
+    "networkStatus": {
+      "@id": "wholechain:networkStatus",
+      "@type": "@id"
+    },
+    "tradePartnerName": {
+      "@id": "wholechain:tradePartnerName",
+      "@type": "xsd:string"
+    },
+    "tradePartnerUrn": {
+      "@id": "wholechain:tradePartnerUrn",
+      "@type": "xsd:string"
+    },
+    "hasActiveInventory": {
+      "@id": "wholechain:hasActiveInventory",
+      "@type": "xsd:boolean"
+    },
+    "wholechainId": {
+      "@id": "wholechain:wholechainId",
+      "@type": "xsd:string"
+    },
+    "sharedWith": {
+      "@id": "wholechain:sharedWith",
+      "@container": "@list"
+    },
+    "isDefault": {
+      "@id": "wholechain:isDefault",
+      "@type": "xsd:boolean"
+    },
+    "geoJson": {
+      "@id": "wholechain:geoJson",
+      "@type": "xsd:string"
+    },
+    "locationGroupId": {
+      "@id": "wholechain:locationGroupId",
+      "@type": "xsd:string"
+    },
+    "dataPolicyElements": {
+      "@id": "wholechain:dataPolicyElements",
+      "@type": "@id"
+    },
+    "ownerInfo": {
+      "@id": "wholechain:ownerInfo",
+      "@type": "@id"
+    },
+    "Wholechain.API.Contracts.Locations.Responses.SharedWithContract": "wholechain:Wholechain.API.Contracts.Locations.Responses.SharedWithContract",
+    "accountName": {
+      "@id": "wholechain:accountName",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.Locations.VesselInformationContract": "wholechain:Wholechain.API.Contracts.Locations.VesselInformationContract",
+    "vesselName": {
+      "@id": "wholechain:vesselName",
+      "@type": "xsd:string"
+    },
+    "vesselFlagState": {
+      "@id": "wholechain:vesselFlagState",
+      "@type": "xsd:string"
+    },
+    "imoNumber": {
+      "@id": "wholechain:imoNumber",
+      "@type": "xsd:string"
+    },
+    "vesselSatelliteTrackingAuthority": {
+      "@id": "wholechain:vesselSatelliteTrackingAuthority",
+      "@type": "xsd:string"
+    },
+    "vesselPublicRegistryLink": {
+      "@id": "wholechain:vesselPublicRegistryLink",
+      "@type": "xsd:string"
+    },
+    "vesselRegistration": {
+      "@id": "wholechain:vesselRegistration",
+      "@type": "xsd:string"
+    },
+    "unloadingPort": {
+      "@id": "wholechain:unloadingPort",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse": "wholechain:Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse",
+    "profileImagePreSignedUrl": {
+      "@id": "wholechain:profileImagePreSignedUrl",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse": "wholechain:Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse",
+    "Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract": "wholechain:Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract",
+    "order": {
+      "@id": "wholechain:order",
+      "@type": "xsd:integer"
+    },
+    "elementId": {
+      "@id": "wholechain:elementId",
+      "@type": "xsd:string"
+    },
+    "Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract": "wholechain:Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract",
+    "Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract": "wholechain:Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract",
+    "Wholechain.API.Contracts.Products.Enums.ProductInventoryLocationFilterModeContract": "wholechain:Wholechain.API.Contracts.Products.Enums.ProductInventoryLocationFilterModeContract",
+    "Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract": "wholechain:Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract",
+    "Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract": "wholechain:Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Wholechain API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Wholechain's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-18) from openapi/wholechain-openapi.yml.",
+  "dcterms:created": "2026-10-18",
+  "dcterms:source": [
+    "openapi/wholechain-openapi.yml"
+  ]
+}

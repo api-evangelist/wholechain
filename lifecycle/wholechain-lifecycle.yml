@@ -1,0 +1,7 @@
+generated: '2026-10-18'
+method: searched
+source: https://status.wholechain.com/
+versioning: null
+deprecation: null
+status_page: https://status.wholechain.com/
+note: No versioning policy or deprecation policy documented. A status page is available at https://status.wholechain.com/ showing service uptime and maintenance history. Data retention periods are mentioned in pricing plans (3-4 years depending on plan).

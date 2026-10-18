@@ -1,0 +1,24 @@
+generated: '2026-10-18'
+method: searched
+source: https://developers.wholechain.com/
+authentication:
+  style: API Key
+  header: X-API-KEY
+  location: header
+idempotency:
+  coverage: none
+  note: No idempotency mechanism documented in the API specification or documentation.
+pagination:
+  style: none
+  note: No pagination conventions documented in the API specification or documentation.
+versioning:
+  style: none
+  note: No versioning conventions documented in the API documentation.
+error_envelope:
+  style: HTTP status codes
+  note: Errors are communicated through standard HTTP status codes (200, 400, 500) without structured error response bodies.
+reversibility:
+  coverage: none
+  note: No reversal operations or windows documented for write operations.
+dry_run_mode: none
+note: The API uses basic API key authentication with X-API-KEY header. No advanced conventions like idempotency, pagination, or structured error responses are documented.

@@ -1,0 +1,24 @@
+generated: '2026-10-18'
+method: searched
+generator: extract-docs-artifacts.py (deepseek)
+source: https://developers.wholechain.com/GettingStarted/Authentication/
+sources:
+- https://developers.wholechain.com/GettingStarted/Authentication/
+- https://developers.wholechain.com/GettingStarted/Introduction/
+- https://developers.wholechain.com/GettingStarted/SandboxSetup/
+description: Wholechain API uses API keys for authentication, which must be included in request headers.
+schemes:
+- type: apiKey
+  name: API Key
+  evidence: The Wholechain API uses API keys as the primary method of authentication.
+  header: Authorization
+  location: header
+  how_to_obtain: 'Log into Your Wholechain Account: Use your credentials to log into your Wholechain platform account. Navigate to Settings: Once
+    logged in, go to the settings section by clicking on the settings icon located in the top right corner of the dashboard. Account Settings:
+    On the left-hand side panel, select Account Settings . Scroll Down to Integration Settings: In the Account Settings page, scroll to the bottom
+    until you reach the section labeled Integration Settings . Generate Your API Key: Under Integration Settings , you will see an option labeled
+    API Key . Click the Generate API Key button. This will generate a new API key for your account. Use Your API Key: Once the key is generated,
+    you can copy it and use it in the headers of your API requests.'
+docs: https://developers.wholechain.com/GettingStarted/Authentication/
+note: The documentation mentions using the API key "in the headers of your API requests" but doesn't specify the exact header name. The Authorization
+  header is a common convention for API keys, but the page doesn't explicitly state which header to use.

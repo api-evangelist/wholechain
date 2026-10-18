@@ -1,0 +1,577 @@
+openapi: 3.2.0
+info:
+  title: Wholechain Events API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged Events across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: Events
+paths:
+  /epcis/Events/details:
+    get:
+      tags:
+      - Events
+      summary: Return a list of events details for the supply chain
+      operationId: ListEventDetails
+      parameters:
+      - name: LotSerial
+        in: query
+        schema:
+          type: string
+      - name: PurchaseOrder
+        in: query
+        schema:
+          type: string
+      - name: PerformTraceback
+        in: query
+        schema:
+          type: boolean
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: SortBy
+        in: query
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse'
+components:
+  schemas:
+    Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract:
+      enum:
+      - Kgm
+      - Lbs
+      - Cases
+      - Units
+      - Item
+      - Lbr
+      - Pint
+      - Each
+      - Bags
+      - Boxes
+      - Dozens
+      - Gallons
+      - Ounces
+      - Packs
+      - Quarts
+      - Bushels
+      - Trays
+      - Tubs
+      - Sides
+      - Loins
+      type: string
+      description: Simple units of measurement for products.
+    Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        standard:
+          type:
+          - string
+          - 'null'
+        agency:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        identification:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.EventMasterDataContract:
+      type: object
+      properties:
+        keyDataElementDefinitionId:
+          type:
+          - string
+          - 'null'
+          description: 'Optional reference to a KDE definition. When provided, this ties the master data
+
+            to a specific KDE for data policy validation and reporting.'
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        propertyLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.Common.AddressContract:
+      type: object
+      properties:
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        addressLine1:
+          type:
+          - string
+          - 'null'
+        addressLine2:
+          type:
+          - string
+          - 'null'
+        postalCode:
+          type:
+          - string
+          - 'null'
+        geoCoordinates:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract'
+        displayAddress:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Enums.EventCustomPropertyLocationContract:
+      enum:
+      - ILMD
+      - Extension
+      - Mda
+      - Custom
+      type: string
+      description: Locates where the custom data is located in the EPCIS XML.
+    Wholechain.API.Contracts.Products.ProductMasterDataContract:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        order:
+          type: integer
+          format: int32
+        elementId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        keyDataElementDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.PaginatedEventDetailsResponse:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int64
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.EventDetailResponse'
+        hasNextPage:
+          type: boolean
+          readOnly: true
+        hasPreviousPage:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    Wholechain.API.Contracts.Common.GeoCoordinatesContract:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Enums.TransformationTypeContract:
+      enum:
+      - Input
+      - Output
+      type: string
+    Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract:
+      required:
+      - reason
+      type: object
+      properties:
+        reason:
+          type:
+          - string
+          - 'null'
+          format: uri
+        declarationTime:
+          type: string
+          format: date-time
+        correctingEventID:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.EventDetailResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        eventId:
+          type: string
+          format: uuid
+        instanceId:
+          type: string
+          format: uuid
+        isContainer:
+          type: boolean
+          readOnly: true
+        containerId:
+          type:
+          - string
+          - 'null'
+          deprecated: true
+        containerIdentifier:
+          type:
+          - string
+          - 'null'
+        containerEntityId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        eventType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.EventTypeContract'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        productId:
+          type: string
+          format: uuid
+        traceabilityLotCode:
+          type:
+          - string
+          - 'null'
+        referenceDocumentId:
+          type:
+          - string
+          - 'null'
+        referenceDocumentType:
+          type:
+          - string
+          - 'null'
+        tlcSource:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract'
+        lotSerial:
+          type:
+          - string
+          - 'null'
+        quantity:
+          type:
+          - number
+          - 'null'
+          format: double
+        locationName:
+          type:
+          - string
+          - 'null'
+        companyName:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        eventLoggedDate:
+          type: string
+          format: date-time
+        createdTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        unitOfMeasure:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract'
+        identifierType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract'
+        unitDescriptor:
+          type:
+          - string
+          - 'null'
+        unitQuantity:
+          type:
+          - string
+          - 'null'
+        businessStep:
+          type:
+          - string
+          - 'null'
+        disposition:
+          type:
+          - string
+          - 'null'
+        invoiceNumber:
+          type:
+          - string
+          - 'null'
+        eventTimezoneOffset:
+          type:
+          - string
+          - 'null'
+        purchaseOrder:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.AddressContract'
+        masterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.EventMasterDataContract'
+        certifications:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.ProductInstances.ProductInstanceCertificationContract'
+        instanceMasterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract'
+        productMasterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.ProductMasterDataContract'
+        transformType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.TransformationTypeContract'
+        errorDeclaration:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.ErrorDeclarationContract'
+        deleted:
+          type: boolean
+        locationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        tradePartnerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipFromLocationName:
+          type:
+          - string
+          - 'null'
+        shipToLocationName:
+          type:
+          - string
+          - 'null'
+        shipFromLocationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipToLocationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipFromTradePartnerName:
+          type:
+          - string
+          - 'null'
+        shipFromTradePartnerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipToTradePartnerName:
+          type:
+          - string
+          - 'null'
+        shipToTradePartnerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract:
+      type: object
+      properties:
+        locationName:
+          type:
+          - string
+          - 'null'
+        companyName:
+          type:
+          - string
+          - 'null'
+        identifier:
+          type:
+          - string
+          - 'null'
+        reference:
+          type:
+          - string
+          - 'null'
+        type:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract'
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        postalCode:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        geoCoordinates:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract:
+      enum:
+      - Identifier
+      - MasterData
+      type: string
+    Wholechain.API.Contracts.ProductInstances.InstanceMasterDataContract:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        order:
+          type: integer
+          format: int32
+        elementId:
+          type:
+          - string
+          - 'null'
+        keyDataElementDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Enums.EventTypeContract:
+      enum:
+      - Commission
+      - Observe
+      - Ship
+      - Transform
+      - Aggregation
+      - Decommission
+      - Disaggregation
+      - Receive
+      type: string
+    Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract:
+      enum:
+      - Lot
+      - Serial
+      type: string
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

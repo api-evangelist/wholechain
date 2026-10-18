@@ -1,0 +1,454 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-api-contracts-connect-integration-process-events-process-events-response-schema.json",
+  "title": "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "result": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult"
+      }
+    },
+    "locations": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult"
+      }
+    },
+    "products": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult"
+      }
+    },
+    "errors": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessError"
+      }
+    },
+    "validations": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/FluentValidation.Results.ValidationFailure"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "FluentValidation.Results.ValidationFailure": {
+      "type": "object",
+      "properties": {
+        "propertyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errorMessage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attemptedValue": {
+          "nullable": true
+        },
+        "customState": {
+          "nullable": true
+        },
+        "severity": {
+          "$ref": "#/$defs/FluentValidation.Severity"
+        },
+        "errorCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formattedMessagePlaceholderValues": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "nullable": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "FluentValidation.Severity": {
+      "enum": [
+        "Error",
+        "Warning",
+        "Info"
+      ],
+      "type": "string"
+    },
+    "System.Net.HttpStatusCode": {
+      "enum": [
+        "Continue",
+        "SwitchingProtocols",
+        "Processing",
+        "EarlyHints",
+        "OK",
+        "Created",
+        "Accepted",
+        "NonAuthoritativeInformation",
+        "NoContent",
+        "ResetContent",
+        "PartialContent",
+        "MultiStatus",
+        "AlreadyReported",
+        "IMUsed",
+        "MultipleChoices",
+        "MovedPermanently",
+        "Found",
+        "SeeOther",
+        "NotModified",
+        "UseProxy",
+        "Unused",
+        "TemporaryRedirect",
+        "PermanentRedirect",
+        "BadRequest",
+        "Unauthorized",
+        "PaymentRequired",
+        "Forbidden",
+        "NotFound",
+        "MethodNotAllowed",
+        "NotAcceptable",
+        "ProxyAuthenticationRequired",
+        "RequestTimeout",
+        "Conflict",
+        "Gone",
+        "LengthRequired",
+        "PreconditionFailed",
+        "RequestEntityTooLarge",
+        "RequestUriTooLong",
+        "UnsupportedMediaType",
+        "RequestedRangeNotSatisfiable",
+        "ExpectationFailed",
+        "MisdirectedRequest",
+        "UnprocessableEntity",
+        "Locked",
+        "FailedDependency",
+        "UpgradeRequired",
+        "PreconditionRequired",
+        "TooManyRequests",
+        "RequestHeaderFieldsTooLarge",
+        "UnavailableForLegalReasons",
+        "InternalServerError",
+        "NotImplemented",
+        "BadGateway",
+        "ServiceUnavailable",
+        "GatewayTimeout",
+        "HttpVersionNotSupported",
+        "VariantAlsoNegotiates",
+        "InsufficientStorage",
+        "LoopDetected",
+        "NotExtended",
+        "NetworkAuthenticationRequired"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus": {
+      "enum": [
+        "Created",
+        "Skipped",
+        "Overridden",
+        "Updated"
+      ],
+      "type": "string"
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ContainerResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sscc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessError": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "$ref": "#/$defs/System.Net.HttpStatusCode"
+        },
+        "message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extensions": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "nullable": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "missingLots": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult": {
+      "type": "object",
+      "properties": {
+        "lotSerial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "productIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requestedQuantity": {
+          "type": "number",
+          "format": "double"
+        },
+        "missingQuantity": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult": {
+      "type": "object",
+      "properties": {
+        "documentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "externalEventId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The external event id from the request (e.g. Connect event id), when available."
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "productInstances": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult"
+          }
+        },
+        "containers": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ContainerResult"
+          }
+        },
+        "directShipFallback": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult"
+        },
+        "externalShipmentFailure": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult"
+        },
+        "documentsNotAttached": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult"
+          },
+          "description": "Document IDs from the request that were not attached because no document with that id exists for the account.\nThe event is still created. Null when every supplied id was attached or none were supplied."
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus"
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "urn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quantity": {
+          "type": "number",
+          "format": "double"
+        },
+        "lotSerial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

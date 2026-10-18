@@ -1,0 +1,3755 @@
+openapi: 3.2.0
+info:
+  title: Wholechain Connect API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged Connect across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: Connect
+paths:
+  /Integration:
+    post:
+      tags:
+      - Connect
+      operationId: XML
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              type: array
+              items: {}
+          text/xml:
+            schema:
+              type: array
+              items: {}
+      responses:
+        '200':
+          description: OK
+      summary: XML
+      x-summary-source: derived
+  /Integration/Events:
+    post:
+      tags:
+      - Connect
+      operationId: ProcessEvents
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse'
+      summary: Process events
+      x-summary-source: derived
+  /Integration/Events/async:
+    post:
+      tags:
+      - Connect
+      operationId: EnqueueEvents
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse'
+      summary: Enqueue events
+      x-summary-source: derived
+  /Integration/Events/{eventId}:
+    delete:
+      tags:
+      - Connect
+      operationId: DeleteEvent
+      parameters:
+      - name: eventId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Delete event
+      x-summary-source: derived
+  /Integration/Locations:
+    post:
+      tags:
+      - Connect
+      operationId: ProcessLocations
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Locations.Commands.ProcessLocations.ProcessConnectLocationsRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Locations.Commands.ProcessLocations.ProcessConnectLocationsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Process locations
+      x-summary-source: derived
+    get:
+      tags:
+      - Connect
+      operationId: ListLocations
+      parameters:
+      - name: SearchString
+        in: query
+        schema:
+          type: string
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: SortBy
+        in: query
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse'
+      summary: List locations
+      x-summary-source: derived
+  /Integration/Location:
+    put:
+      tags:
+      - Connect
+      operationId: UpdateLocation
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Locations.Commands.UpdateLocation.ConnectUpdateLocationRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Locations.Commands.UpdateLocation.ConnectUpdateLocationRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse'
+      summary: Update location
+      x-summary-source: derived
+  /Integration/Location/{locationId}:
+    get:
+      tags:
+      - Connect
+      operationId: GetLocation
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Get location
+      x-summary-source: derived
+  /Integration/PurchaseOrder:
+    get:
+      tags:
+      - Connect
+      operationId: GetPurchaseOrder
+      parameters:
+      - name: PurchaseOrderNumber
+        in: query
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+      summary: Get purchase order
+      x-summary-source: derived
+    put:
+      tags:
+      - Connect
+      operationId: UpdatePurchaseOrder
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.PurchaseOrders.Commands.ConnectUpdatePurchaseOrderRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+      summary: Update purchase order
+      x-summary-source: derived
+  /Integration/Products:
+    post:
+      tags:
+      - Connect
+      operationId: ProcessProducts
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessProducts.ProcessConnectProductsRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessProducts.ProcessConnectProductsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Process products
+      x-summary-source: derived
+    get:
+      tags:
+      - Connect
+      operationId: GetPaginatedProducts
+      parameters:
+      - name: Name
+        in: query
+        schema:
+          type: string
+      - name: ExternalIdentifier
+        in: query
+        schema:
+          type: string
+      - name: NameOrExternalIdentifier
+        in: query
+        schema:
+          type: string
+      - name: Urn
+        in: query
+        schema:
+          type: string
+      - name: Upc
+        in: query
+        schema:
+          type: string
+      - name: ProductBrandName
+        in: query
+        schema:
+          type: string
+      - name: ProductCommodityName
+        in: query
+        schema:
+          type: string
+      - name: ProductCommodityIds
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: ProductIds
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: ProductGoodKindName
+        in: query
+        schema:
+          type: string
+      - name: SearchQuery
+        in: query
+        schema:
+          type: string
+      - name: SharingPolicies
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract'
+      - name: LocationIds
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: InventoryLocationFilterMode
+        in: query
+        schema:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductInventoryLocationFilterModeContract'
+      - name: ShowArchived
+        in: query
+        schema:
+          type: boolean
+      - name: SelfOnly
+        in: query
+        schema:
+          type: boolean
+      - name: AccountId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: TradePartnerId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: ExternalIdentifiers
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: SortBy
+        in: query
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse'
+      summary: Get paginated products
+      x-summary-source: derived
+  /Integration/Product:
+    put:
+      tags:
+      - Connect
+      operationId: UpdateProduct
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Products.Commands.UpdateProduct.ConnectUpdateProductRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Products.Commands.UpdateProduct.ConnectUpdateProductRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse'
+      summary: Update product
+      x-summary-source: derived
+  /Integration/files/notification:
+    post:
+      tags:
+      - Connect
+      operationId: NotifyNewFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Services.FileService.FileUploadEvent'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Services.FileService.FileUploadEvent'
+      responses:
+        '200':
+          description: OK
+      summary: Notify new file
+      x-summary-source: derived
+  /Integration/PackingList:
+    post:
+      tags:
+      - Connect
+      operationId: ProcessPackingList
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          text/csv:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Process packing list
+      x-summary-source: derived
+  /Integration/Jobs:
+    get:
+      tags:
+      - Connect
+      operationId: GetJobs
+      parameters:
+      - name: JobId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: Status
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: EventType
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: SortBy
+        in: query
+        schema:
+          type: string
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse'
+      summary: Get jobs
+      x-summary-source: derived
+  /Integration/Inventory:
+    get:
+      tags:
+      - Connect
+      operationId: GetInventory
+      parameters:
+      - name: ProductIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: LocationIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: AfterDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse'
+      summary: Get inventory
+      x-summary-source: derived
+  /Integration/PurchaseOrders:
+    post:
+      tags:
+      - Connect
+      operationId: ProcessPurchaseOrders
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.PurchaseOrders.Commands.ProcessConnectPurchaseOrdersRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse'
+      summary: Process purchase orders
+      x-summary-source: derived
+  /Integration/Documents:
+    post:
+      tags:
+      - Connect
+      summary: Uploads one supporting document for the account that owns the API key.
+      operationId: UploadDocument
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Title
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Id
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Type
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Type-Name
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Expiration-Date
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Company
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Location
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Product
+        in: header
+        schema:
+          type: string
+      - name: X-Document-Privacy
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse'
+        '422':
+          description: Unprocessable Content
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /Integration/PurchaseOrder/review:
+    post:
+      tags:
+      - Connect
+      operationId: ReviewPurchaseOrder
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+      summary: Review purchase order
+      x-summary-source: derived
+  /Integration/PurchaseOrder/share:
+    post:
+      tags:
+      - Connect
+      operationId: SharePurchaseOrder
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse'
+      summary: Share purchase order
+      x-summary-source: derived
+  /Integration/PurchaseOrders/upload:
+    post:
+      tags:
+      - Connect
+      operationId: UploadPurchaseOrders
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+      summary: Upload purchase orders
+      x-summary-source: derived
+components:
+  schemas:
+    Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse:
+      type: object
+      properties:
+        documentId:
+          type: string
+          format: uuid
+        documentDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract:
+      type: object
+      properties:
+        ownerTradePartnerId:
+          type: string
+          format: uuid
+        ownerTradePartnerName:
+          type:
+          - string
+          - 'null'
+        ownerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        isOwner:
+          type: boolean
+          description: 'True when the calling account owns this trade item. False when the calling account
+
+            is a sharee viewing a trade item that was shared to them.'
+      additionalProperties: false
+      description: 'Identifies the owning trade partner of a trade item (product) from the viewer''s perspective.
+
+        Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerTradePartnerId and Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerTradePartnerName are the recipient-side
+
+        trade partner row that represents the owner. Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract.OwnerExternalIdentifier is always the
+
+        owner''s own external identifier for the trade item, regardless of who is viewing.'
+    Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectUpdatePurchaseOrderResponse:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.PurchaseOrderResponse'
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessError'
+        validations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    FluentValidation.Severity:
+      enum:
+      - Error
+      - Warning
+      - Info
+      type: string
+    Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventLocationSummary:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        gln:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      description: 'Lightweight location summary for linked events in purchase order lists.
+
+        Contains only the fields loaded by the list query (no nested trade partner).'
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        externalEventId:
+          type:
+          - string
+          - 'null'
+          description: The external event id from the request (e.g. Connect event id), when available.
+        type:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        productInstances:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult'
+        containers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ContainerResult'
+        directShipFallback:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult'
+        externalShipmentFailure:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult'
+        documentsNotAttached:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult'
+          description: 'Document IDs from the request that were not attached because no document with that id exists for the account.
+
+            The event is still created. Null when every supplied id was attached or none were supplied.'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation:
+      required:
+      - location
+      - quantity
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        quantity:
+          type: integer
+          format: int64
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.Responses.ListLocationsResponse:
+      type: object
+      properties:
+        data:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.LocationResponse'
+        totalCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResponse:
+      type: object
+      properties:
+        documents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResult'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderVisibilityContract:
+      enum:
+      - Private
+      - SharedWithoutRevision
+      - SharedWithRevision
+      type: string
+      description: Purchase Order Visibility Contract.
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails:
+      type: object
+      properties:
+        tradePartner:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner'
+        name:
+          type:
+          - string
+          - 'null'
+        gln:
+          type:
+          - string
+          - 'null'
+        dunsPlus4:
+          type:
+          - string
+          - 'null'
+        identifier:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+        captainsName:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.AddressContract'
+        contact:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.LocationContactInformationContract'
+        ContactInformation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.LocationContactInformationContract'
+        vessel:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.VesselInformationContract'
+        licenseNumber:
+          type:
+          - string
+          - 'null'
+        locationGroup:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification'
+        locationType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Enums.LocationTypeContract'
+        customData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData'
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.ProductMasterDataContract:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        order:
+          type: integer
+          format: int32
+        elementId:
+          type:
+          - string
+          - 'null'
+        id:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        keyDataElementDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse:
+      type: object
+      properties:
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProductResult'
+        locations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.LocationResult'
+        tradePartners:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.TradePartnerResult'
+        events:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.EventResult'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.TradePartnerResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus'
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        pgln:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.VesselInformationContract:
+      type: object
+      properties:
+        vesselName:
+          type:
+          - string
+          - 'null'
+        vesselFlagState:
+          type:
+          - string
+          - 'null'
+        imoNumber:
+          type:
+          - string
+          - 'null'
+        vesselSatelliteTrackingAuthority:
+          type:
+          - string
+          - 'null'
+        vesselPublicRegistryLink:
+          type:
+          - string
+          - 'null'
+        vesselRegistration:
+          type:
+          - string
+          - 'null'
+        unloadingPort:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.TradePartners.Enums.TradePartnerTypeContract:
+      enum:
+      - Wholechain
+      - NonWholechain
+      - Self
+      - External
+      type: string
+      description: Represents trade partner types that have Wholechain accounts or not.
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        gtin:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ConnectInventoryResponse:
+      type: object
+      properties:
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct'
+      additionalProperties: false
+    Wholechain.API.Contracts.Jobs.Responses.JobResponse:
+      type: object
+      properties:
+        jobId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        payload:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.JobStatusContract'
+        startedAt:
+          type: string
+          format: date-time
+        completedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        error:
+          type:
+          - string
+          - 'null'
+        success:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.Products.Commands.UpdateProduct.ConnectUpdateProductRequest:
+      type: object
+      properties:
+        product:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract:
+      enum:
+      - Identifier
+      - MasterData
+      type: string
+    Wholechain.API.Contracts.Locations.Responses.LocationResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        accountId:
+          type: string
+          format: uuid
+        tradePartnerId:
+          type: string
+          format: uuid
+        networkStatus:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.TradePartners.Enums.TradePartnerTypeContract'
+        tradePartnerName:
+          type:
+          - string
+          - 'null'
+        tradePartnerUrn:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        gln:
+          type:
+          - string
+          - 'null'
+        duns:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+        extension:
+          type:
+          - string
+          - 'null'
+        captainsName:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        hasActiveInventory:
+          type: boolean
+        address:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.AddressContract'
+        contact:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.LocationContactInformationContract'
+        vessel:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.VesselInformationContract'
+        wholechainId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sharedWith:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.SharedWithContract'
+        createdTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isDefault:
+          type: boolean
+        geoJson:
+          type:
+          - string
+          - 'null'
+        licenseNumber:
+          type:
+          - string
+          - 'null'
+        locationGroupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        locationType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Enums.LocationTypeContract'
+        locationGroup:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.LocationGroups.Responses.LocationGroupResponse'
+        dataPolicyElements:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse'
+        ownerInfo:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventsResponse:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        result:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ProcessEventResult'
+        locations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult'
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessError'
+        validations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails:
+      required:
+      - productIdentifierType
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        simpleUnitOfMeasurement:
+          type:
+          - string
+          - 'null'
+        unitQuantity:
+          type: number
+          format: double
+        sharingPolicy:
+          type:
+          - string
+          - 'null'
+        productIdentifierType:
+          type:
+          - string
+          - 'null'
+        unitDescriptor:
+          type:
+          - string
+          - 'null'
+        gtin:
+          type:
+          - string
+          - 'null'
+        productMasterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.ProductMasterDataContract'
+        MasterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.ProductMasterDataContract'
+        plu:
+          type:
+          - string
+          - 'null'
+        productBrand:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification'
+        productCommodity:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem:
+      required:
+      - product
+      - quantityOrdered
+      type: object
+      properties:
+        product:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        quantityOrdered:
+          type: integer
+          format: int64
+        unitOfMeasure:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract'
+        unitPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        priceBasisCode:
+          type:
+          - string
+          - 'null'
+        packSize:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        storeAllocations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLineItemStoreAllocation'
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.Responses.SharedWithContract:
+      type: object
+      properties:
+        wholechainId:
+          type: string
+          format: uuid
+        accountName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.Locations.Commands.UpdateLocation.ConnectUpdateLocationRequest:
+      type: object
+      properties:
+        location:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.UpdateLocation.ConnectUpdateLocationResponse:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Locations.Responses.LocationResponse'
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessError'
+        validations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Enums.UnitDescriptorContract:
+      enum:
+      - Cases
+      - Units
+      - Totes
+      - Pallets
+      type: string
+      description: 'Describes how a product simple unit of measurement is separated per unit descriptor.
+
+        For example a product measured in KGM could have 5 KGM per Case.'
+    Wholechain.API.Contracts.Products.Responses.SubProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        accountName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder:
+      required:
+      - lineItems
+      - poType
+      - purchaseOrderNumber
+      - shipFromTradePartner
+      - shipToTradePartner
+      type: object
+      properties:
+        purchaseOrderId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        revisionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        purchaseOrderNumber:
+          type:
+          - string
+          - 'null'
+        poType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderTypesContract'
+        shipFromTradePartner:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        shipFromLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        shipToTradePartner:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        shipToLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        purposeCode:
+          type:
+          - string
+          - 'null'
+        poTypeCode:
+          type:
+          - string
+          - 'null'
+        purchaseOrderDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        requestedDeliveryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelAfterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        transportationMethod:
+          type:
+          - string
+          - 'null'
+        visibility:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderVisibilityContract'
+        locationShare:
+          type:
+          - boolean
+          - 'null'
+          description: 'When true, ShipToLocation and store allocation locations are shared with the partner account.
+
+            When null, account DefaultLocationSharing is used.'
+        productShare:
+          type:
+          - boolean
+          - 'null'
+          description: 'When true, line item products are shared with the partner account.
+
+            When null, account DefaultProductSharing is used.'
+        lineItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem'
+        linkedEvents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent'
+      additionalProperties: false
+    Wholechain.API.Contracts.Documents.Responses.ExternalDocumentUploadResult:
+      type: object
+      properties:
+        documentId:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        documentType:
+          type:
+          - string
+          - 'null'
+        documentTypeName:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileType:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date
+        company:
+          type:
+          - string
+          - 'null'
+        location:
+          type:
+          - string
+          - 'null'
+        product:
+          type:
+          - string
+          - 'null'
+        privacy:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProcessError:
+      type: object
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/System.Net.HttpStatusCode'
+        message:
+          type:
+          - string
+          - 'null'
+        extensions:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    Wholechain.API.Contracts.Jobs.Responses.JobStatusContract:
+      enum:
+      - Started
+      - Completed
+      - Failed
+      type: string
+    Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedShipmentProductPreview:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        gtin:
+          type:
+          - string
+          - 'null'
+        lotSerial:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEvent:
+      type: object
+      properties:
+        eventType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.EventTypeContract'
+        purchaseOrderNumber:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        originLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLinkedEventProduct'
+        tlcSource:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract'
+      additionalProperties: false
+    Wholechain.Connect.Application.Events.Commands.ProcessEvents.ProcessConnectEventsRequest:
+      type: object
+      properties:
+        events:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent'
+        notificationEmails:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Enums.ProductInventoryLocationFilterModeContract:
+      enum:
+      - All
+      - Current
+      - Historical
+      type: string
+    Wholechain.API.Contracts.Events.Enums.EventTypeContract:
+      enum:
+      - Commission
+      - Observe
+      - Ship
+      - Transform
+      - Aggregation
+      - Decommission
+      - Disaggregation
+      - Receive
+      type: string
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectEvent:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        purchaseOrder:
+          type:
+          - string
+          - 'null'
+        invoiceNumber:
+          type:
+          - string
+          - 'null'
+        bizStep:
+          type:
+          - string
+          - 'null'
+        readPoint:
+          type:
+          - string
+          - 'null'
+        disposition:
+          type:
+          - string
+          - 'null'
+        referenceDocumentId:
+          type:
+          - string
+          - 'null'
+        referenceDocumentType:
+          type:
+          - string
+          - 'null'
+        documentIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: 'Optional customer Document IDs of files already uploaded through the document API.
+
+            This is not the TLC reference document id. Omit the field or send an empty array when the event has no attachments.
+
+            Ids that do not exist for the account are reported on the event result and do not prevent the event from being created.'
+        eventTime:
+          type: string
+          format: date-time
+        eventTimeZone:
+          type:
+          - string
+          - 'null'
+        customProperties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty'
+        certificationList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProductResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus'
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        gtin:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderTypesContract:
+      enum:
+      - Supplier
+      - Customer
+      - Other
+      type: string
+    Wholechain.API.Contracts.Products.Responses.ProductSharedWithContract:
+      type: object
+      properties:
+        wholechainId:
+          type: string
+          format: uuid
+        accountName:
+          type:
+          - string
+          - 'null'
+        permission:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse:
+      type: object
+      properties:
+        certificationDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        type:
+          type:
+          - string
+          - 'null'
+        standard:
+          type:
+          - string
+          - 'null'
+        agency:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        identification:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract:
+      enum:
+      - Lot
+      - Serial
+      type: string
+    Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract:
+      enum:
+      - Kgm
+      - Lbs
+      - Cases
+      - Units
+      - Item
+      - Lbr
+      - Pint
+      - Each
+      - Bags
+      - Boxes
+      - Dozens
+      - Gallons
+      - Ounces
+      - Packs
+      - Quarts
+      - Bushels
+      - Trays
+      - Tubs
+      - Sides
+      - Loins
+      type: string
+      description: Simple units of measurement for products.
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.ExternalShipmentFailureResult:
+      type: object
+      properties:
+        reason:
+          type:
+          - string
+          - 'null'
+        message:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int64
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.JobResponse'
+        hasNextPage:
+          type: boolean
+          readOnly: true
+        hasPreviousPage:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    Wholechain.API.Contracts.Shipments.Requests.ShipmentDirectionContract:
+      enum:
+      - Inbound
+      - Outbound
+      type: string
+    Wholechain.API.Contracts.Connect.Integration.ContainerResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        urn:
+          type:
+          - string
+          - 'null'
+        sscc:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectTradePartner:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        pgln:
+          type:
+          - string
+          - 'null'
+        connectionType:
+          type:
+          - string
+          - 'null'
+        duns:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus'
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        quantity:
+          type: number
+          format: double
+        lotSerial:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract:
+      enum:
+      - None
+      - Stellar
+      - Algorand
+      type: string
+      description: Enum that represents different blockchain providers.
+    Wholechain.API.Contracts.Shipments.Requests.ShipmentStatusContract:
+      enum:
+      - Pending
+      - Rejected
+      - Received
+      - Error
+      - Sent
+      - Processing
+      type: string
+    Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.CustomProperty:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        details:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationDetails'
+        updateIfExists:
+          type: boolean
+          description: When true and the location exists in the database, updates the location details from Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation.Details using the location factory.
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult:
+      type: object
+      properties:
+        lotSerial:
+          type:
+          - string
+          - 'null'
+        productIdentifier:
+          type:
+          - string
+          - 'null'
+        requestedQuantity:
+          type: number
+          format: double
+        missingQuantity:
+          type: number
+          format: double
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ConnectInventoryProduct:
+      type: object
+      properties:
+        productId:
+          type:
+          - string
+          - 'null'
+        productName:
+          type:
+          - string
+          - 'null'
+        lots:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot'
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract:
+      type: object
+      properties:
+        ownerTradePartnerId:
+          type: string
+          format: uuid
+        ownerTradePartnerName:
+          type:
+          - string
+          - 'null'
+        ownerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        isOwner:
+          type: boolean
+          description: 'True when the calling account owns this location. False when the calling account
+
+            is a sharee viewing a location that was shared to them.'
+      additionalProperties: false
+      description: 'Identifies the owning trade partner of a location from the viewer''s perspective.
+
+        Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract.OwnerTradePartnerId and Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract.OwnerTradePartnerName are the recipient-side
+
+        trade partner row that represents the owner. Wholechain.API.Contracts.Locations.Responses.LocationOwnerInfoContract.OwnerExternalIdentifier is always the
+
+        owner''s own external identifier for the location, regardless of who is viewing.'
+    Wholechain.API.Contracts.Connect.Integration.ProcessLocations.ProcessLocationResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+        profileImagePreSignedUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        details:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails'
+        updateIfExists:
+          type: boolean
+          description: When true and the product exists in the database, updates the product details from Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct.Details using the product factory.
+      additionalProperties: false
+    Wholechain.API.Contracts.Common.GeoCoordinatesContract:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Responses.ProductGoodKindResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.Events.Commands.ProcessProducts.ProcessConnectProductsRequest:
+      type: object
+      properties:
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct'
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.LocationContactInformationContract:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.Services.FileService.FileUploadEvent:
+      type: object
+      properties:
+        total_size:
+          type: integer
+          format: int32
+        token:
+          type:
+          - string
+          - 'null'
+        organisation_id:
+          type:
+          - string
+          - 'null'
+        authenticated_user:
+          type:
+          - string
+          - 'null'
+        filename:
+          type:
+          - string
+          - 'null'
+        path:
+          type:
+          - string
+          - 'null'
+        relative_path:
+          type:
+          - string
+          - 'null'
+        filename_relative:
+          type:
+          - string
+          - 'null'
+        storage_engine:
+          type:
+          - string
+          - 'null'
+        storage_engine_id:
+          type:
+          - string
+          - 'null'
+        event_type:
+          type:
+          - string
+          - 'null'
+        ip_address:
+          type:
+          - string
+          - 'null'
+        success:
+          type: boolean
+        file_size:
+          type: integer
+          format: int32
+        additional_info:
+          type:
+          - string
+          - 'null'
+        system:
+          type:
+          - string
+          - 'null'
+        transaction_id:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type: number
+          format: double
+        event_id:
+          type:
+          - string
+          - 'null'
+        shared_link_id:
+          type:
+          - string
+          - 'null'
+        inbox_id:
+          type:
+          - string
+          - 'null'
+        node:
+          type:
+          - string
+          - 'null'
+        message:
+          type:
+          - string
+          - 'null'
+        is_support_generated:
+          type: boolean
+        error_type:
+          type:
+          - string
+          - 'null'
+        error_message:
+          type:
+          - string
+          - 'null'
+        error_original:
+          type:
+          - string
+          - 'null'
+        text:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Responses.ProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        urn:
+          type:
+          - string
+          - 'null'
+        sharingPolicy:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract'
+        productIdentifierType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.ProductIdentifierTypeContract'
+        accountId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        productBrand:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.ProductBrands.Responses.ProductBrandResponse'
+        productCommodity:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.ProductCommodities.Responses.ProductCommodityResponse'
+        productGoodKind:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.ProductGoodKindResponse'
+        simpleUnitOfMeasurement:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract'
+        unitQuantity:
+          type: number
+          format: double
+        unitDescriptor:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.UnitDescriptorContract'
+        blockchain:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.Enums.BlockchainTypeContract'
+        gtin:
+          type:
+          - string
+          - 'null'
+        plu:
+          type:
+          - string
+          - 'null'
+        upc:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+        currentInventory:
+          type: integer
+          format: int32
+        currentInventoryTotal:
+          type: number
+          format: double
+        shippedInventory:
+          type: integer
+          format: int32
+        productMasterData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.ProductMasterDataContract'
+        subProducts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.SubProductResponse'
+        lastModifiedTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdTime:
+          type: string
+          format: date-time
+        accountName:
+          type:
+          - string
+          - 'null'
+        pendingShipmentItems:
+          type: integer
+          format: int32
+        hasActiveInventory:
+          type: boolean
+          description: 'True when the current account has at least one on-hand product instance
+
+            (not deleted, consumed, superseded, or shipped).'
+        description:
+          type:
+          - string
+          - 'null'
+        defaultImageDocumentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        defaultImagePreSignedUrl:
+          type:
+          - string
+          - 'null'
+        sharedWith:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.ProductSharedWithContract'
+        originalAccountId:
+          type: string
+          format: uuid
+        archived:
+          type: boolean
+          description: Whether the product catalog row is archived (hidden from default listings until unarchived).
+        dataPolicyElements:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse'
+        ownerInfo:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.ProductOwnerInfoContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.Products.Enums.ProductSharedPermissionContract:
+      enum:
+      - Owner
+      - Read
+      - Write
+      type: string
+      description: Describes a permission that an account has over a product.
+    Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventTradePartnerSummary:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        pgln:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      description: 'Lightweight trade partner summary for linked events in purchase order lists.
+
+        Contains only the fields loaded by the list query.'
+    Wholechain.API.Contracts.Connect.Integration.ProcessProducts.ProcessProductResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.UpdateProduct.ConnectUpdateProductResponse:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.ProductResponse'
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessError'
+        validations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductClassification:
+      type: object
+      properties:
+        identifier:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.SharePurchaseOrder.ConnectSharePurchaseOrderRequest:
+      required:
+      - enableRevision
+      - purchaseOrderId
+      type: object
+      properties:
+        purchaseOrderId:
+          type: string
+          format: uuid
+        enableRevision:
+          type: boolean
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Wholechain.Connect.Application.Locations.Commands.ProcessLocations.ProcessConnectLocationsRequest:
+      type: object
+      properties:
+        locations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocation'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus:
+      enum:
+      - Created
+      - Skipped
+      - Overridden
+      - Updated
+      type: string
+    Wholechain.Connect.Application.Shipments.Commands.ProcessJsonFile.ConnectEventResponse:
+      type: object
+      properties:
+        message:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.CreateConnectResponse'
+        errors:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceContract:
+      type: object
+      properties:
+        locationName:
+          type:
+          - string
+          - 'null'
+        companyName:
+          type:
+          - string
+          - 'null'
+        identifier:
+          type:
+          - string
+          - 'null'
+        reference:
+          type:
+          - string
+          - 'null'
+        type:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Responses.TraceabilityLotCodeSourceTypeContract'
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        postalCode:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        geoCoordinates:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedShipmentSummary:
+      required:
+      - direction
+      - eventDate
+      - eventType
+      - hasTraceInformation
+      - loggedDate
+      - shipmentId
+      - status
+      - type
+      type: object
+      properties:
+        shipmentId:
+          type: string
+          format: uuid
+        direction:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Shipments.Requests.ShipmentDirectionContract'
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Shipments.Requests.ShipmentStatusContract'
+        type:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.ShipmentTypeContract'
+        hasTraceInformation:
+          type: boolean
+        eventType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Events.Enums.EventTypeContract'
+        shipEventId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        receiveEventId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        purchaseOrder:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        loggedDate:
+          type: string
+          format: date-time
+        originLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventLocationSummary'
+        originTradePartner:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventTradePartnerSummary'
+        destinationLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventLocationSummary'
+        destinationTradePartner:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedEventTradePartnerSummary'
+        products:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedShipmentProductPreview'
+        purchaseOrderShipmentStatus:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ReviewPurchaseOrder.ConnectReviewPurchaseOrderRequest:
+      required:
+      - action
+      - purchaseOrderId
+      - revisionId
+      type: object
+      properties:
+        purchaseOrderId:
+          type: string
+          format: uuid
+        revisionId:
+          type: string
+          format: uuid
+        action:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.LocationGroups.Responses.LocationGroupResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        externalIdentifier:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.EventResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus'
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        productInstances:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProductInstanceResult'
+        containers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ContainerResult'
+      additionalProperties: false
+    Wholechain.API.Contracts.Common.AddressContract:
+      type: object
+      properties:
+        city:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        addressLine1:
+          type:
+          - string
+          - 'null'
+        addressLine2:
+          type:
+          - string
+          - 'null'
+        postalCode:
+          type:
+          - string
+          - 'null'
+        geoCoordinates:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract'
+        displayAddress:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Responses.LineItemStoreAllocationResponse:
+      required:
+      - id
+      - locationId
+      - quantity
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        locationId:
+          type: string
+          format: uuid
+        locationName:
+          type:
+          - string
+          - 'null'
+        locationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        locationUrn:
+          type:
+          - string
+          - 'null'
+        quantity:
+          type: integer
+          format: int64
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DocumentNotAttachedResult:
+      type: object
+      properties:
+        documentId:
+          type:
+          - string
+          - 'null'
+        reason:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Responses.PurchaseOrderResponse:
+      required:
+      - accountId
+      - id
+      - lastUpdate
+      - purchaseOrderNumber
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        accountId:
+          type: string
+          format: uuid
+        purchaseOrderNumber:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderStatusContract'
+        poType:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderTypesContract'
+        shipFromTradePartnerId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shipFromTradePartnerName:
+          type:
+          - string
+          - 'null'
+        shipFromTradePartnerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipFromTradePartnerUrn:
+          type:
+          - string
+          - 'null'
+        shipFromLocationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shipFromLocationName:
+          type:
+          - string
+          - 'null'
+        shipFromLocationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipFromLocationUrn:
+          type:
+          - string
+          - 'null'
+        shipToTradePartnerId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shipToTradePartnerName:
+          type:
+          - string
+          - 'null'
+        shipToTradePartnerExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipToTradePartnerUrn:
+          type:
+          - string
+          - 'null'
+        shipToLocationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shipToLocationName:
+          type:
+          - string
+          - 'null'
+        shipToLocationExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        shipToLocationUrn:
+          type:
+          - string
+          - 'null'
+        otherPoTradePartnerName:
+          type:
+          - string
+          - 'null'
+        otherPoLocationName:
+          type:
+          - string
+          - 'null'
+        lastUpdate:
+          type: string
+          format: date-time
+        purposeCode:
+          type:
+          - string
+          - 'null'
+        poTypeCode:
+          type:
+          - string
+          - 'null'
+        purchaseOrderDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        requestedDeliveryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelAfterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        transportationMethod:
+          type:
+          - string
+          - 'null'
+        revision:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        revisionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        visibility:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderVisibilityContract'
+        permission:
+          type:
+          - string
+          - 'null'
+        pendingReview:
+          type: boolean
+        revisionOwner:
+          type: boolean
+        shipmentCount:
+          type: integer
+          format: int32
+        totalUniqueProductCount:
+          type: integer
+          format: int32
+        linkedShipments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LinkedShipmentSummary'
+        lineItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.PurchaseOrderLineItemResponse'
+        dataPolicyElements:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.PurchaseOrders.Commands.ConnectUpdatePurchaseOrderRequest:
+      type: object
+      properties:
+        purchaseOrder:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectPurchaseOrderUpdate'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectCertificationInfo:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        standard:
+          type:
+          - string
+          - 'null'
+        agency:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        identification:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLot:
+      type: object
+      properties:
+        lotSerial:
+          type:
+          - string
+          - 'null'
+        inventory:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity'
+      additionalProperties: false
+    Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse:
+      type: object
+      properties:
+        keyDataElementDefinitionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.Connect.Application.PurchaseOrders.Commands.ProcessConnectPurchaseOrdersRequest:
+      type: object
+      properties:
+        purchaseOrders:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrder'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.UpdatePurchaseOrder.ConnectPurchaseOrderUpdate:
+      required:
+      - lineItems
+      - purchaseOrderId
+      type: object
+      properties:
+        purchaseOrderId:
+          type: string
+          format: uuid
+        shipFromLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        shipToLocation:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderTpLocProduct'
+        purposeCode:
+          type:
+          - string
+          - 'null'
+        poTypeCode:
+          type:
+          - string
+          - 'null'
+        purchaseOrderDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        requestedDeliveryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelAfterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        transportationMethod:
+          type:
+          - string
+          - 'null'
+        lineItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectPurchaseOrderLineItem'
+      additionalProperties: false
+    System.Net.HttpStatusCode:
+      enum:
+      - Continue
+      - SwitchingProtocols
+      - Processing
+      - EarlyHints
+      - OK
+      - Created
+      - Accepted
+      - NonAuthoritativeInformation
+      - NoContent
+      - ResetContent
+      - PartialContent
+      - MultiStatus
+      - AlreadyReported
+      - IMUsed
+      - MultipleChoices
+      - MovedPermanently
+      - Found
+      - SeeOther
+      - NotModified
+      - UseProxy
+      - Unused
+      - TemporaryRedirect
+      - PermanentRedirect
+      - BadRequest
+      - Unauthorized
+      - PaymentRequired
+      - Forbidden
+      - NotFound
+      - MethodNotAllowed
+      - NotAcceptable
+      - ProxyAuthenticationRequired
+      - RequestTimeout
+      - Conflict
+      - Gone
+      - LengthRequired
+      - PreconditionFailed
+      - RequestEntityTooLarge
+      - RequestUriTooLong
+      - UnsupportedMediaType
+      - RequestedRangeNotSatisfiable
+      - ExpectationFailed
+      - MisdirectedRequest
+      - UnprocessableEntity
+      - Locked
+      - FailedDependency
+      - UpgradeRequired
+      - PreconditionRequired
+      - TooManyRequests
+      - RequestHeaderFieldsTooLarge
+      - UnavailableForLegalReasons
+      - InternalServerError
+      - NotImplemented
+      - BadGateway
+      - ServiceUnavailable
+      - GatewayTimeout
+      - HttpVersionNotSupported
+      - VariantAlsoNegotiates
+      - InsufficientStorage
+      - LoopDetected
+      - NotExtended
+      - NetworkAuthenticationRequired
+      type: string
+    Wholechain.API.Contracts.Products.Responses.PaginatedProductsResponse:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int64
+        results:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Responses.ProductResponse'
+        hasNextPage:
+          type: boolean
+          readOnly: true
+        hasPreviousPage:
+          type: boolean
+          readOnly: true
+        grossCount:
+          type: integer
+          format: int64
+      additionalProperties: false
+    Wholechain.API.Contracts.Events.Enums.ShipmentTypeContract:
+      enum:
+      - Internal
+      - NonWholechain
+      - Wholechain
+      - ExternalIncoming
+      - ExternalOutgoing
+      type: string
+    Wholechain.API.Contracts.Products.Enums.ProductSharingPolicyContract:
+      enum:
+      - Open
+      - Restricted
+      type: string
+    Wholechain.API.Contracts.Connect.Integration.LocationResult:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ConnectEventStatus'
+        id:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        gln:
+          type:
+          - string
+          - 'null'
+        geoCoordinates:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Common.GeoCoordinatesContract'
+      additionalProperties: false
+    Wholechain.API.Contracts.Locations.Enums.LocationTypeContract:
+      enum:
+      - CorporateOffice
+      - WarehouseDC
+      - ProcessingPlant
+      - Farm
+      - Pond
+      - Cage
+      - FeedMill
+      - Hatchery
+      - Vessel
+      - TransshipmentVessel
+      - Landing
+      type: string
+    Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipFallbackResult:
+      type: object
+      properties:
+        reason:
+          type:
+          - string
+          - 'null'
+        missingLots:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Integration.ProcessEvents.DirectShipMissingLotResult'
+      additionalProperties: false
+    FluentValidation.Results.ValidationFailure:
+      type: object
+      properties:
+        propertyName:
+          type:
+          - string
+          - 'null'
+        errorMessage:
+          type:
+          - string
+          - 'null'
+        attemptedValue: {}
+        customState: {}
+        severity:
+          $ref: '#/components/schemas/FluentValidation.Severity'
+        errorCode:
+          type:
+          - string
+          - 'null'
+        formattedMessagePlaceholderValues:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    Wholechain.Connect.Application.Events.Commands.EnqueueEvents.EnqueueEventsResponse:
+      type: object
+      properties:
+        result:
+          type:
+          - string
+          - 'null'
+        correlationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        validations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Responses.PurchaseOrderLineItemResponse:
+      required:
+      - id
+      - productId
+      - quantityOrdered
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        productId:
+          type: string
+          format: uuid
+        productName:
+          type:
+          - string
+          - 'null'
+        productExternalIdentifier:
+          type:
+          - string
+          - 'null'
+        productUrn:
+          type:
+          - string
+          - 'null'
+        quantityOrdered:
+          type: integer
+          format: int64
+        unitOfMeasure:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Products.Enums.SimpleUnitOfMeasurementContract'
+        unitPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        priceBasisCode:
+          type:
+          - string
+          - 'null'
+        packSize:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        storeAllocations:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.PurchaseOrders.Responses.LineItemStoreAllocationResponse'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectLocationCustomData:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        namespace:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Integration.ConnectInventoryLocationQuantity:
+      type: object
+      properties:
+        locationId:
+          type:
+          - string
+          - 'null'
+        locationName:
+          type:
+          - string
+          - 'null'
+        quantityAvailable:
+          type: number
+          format: double
+        eventDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Wholechain.API.Contracts.PurchaseOrders.Enums.PurchaseOrderStatusContract:
+      enum:
+      - Unfulfilled
+      - Fulfilled
+      - Other
+      type: string
+    Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyElementsResponse:
+      type: object
+      properties:
+        keyDataElementValues:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyKeyDataElementValueResponse'
+        certifications:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyCertificationValueResponse'
+        documents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Wholechain.API.Contracts.DataPolicy.Responses.DataPolicyDocumentValueResponse'
+      additionalProperties: false
+    Wholechain.API.Contracts.Connect.Events.Requests.V2.PutConnectProductRequest:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        urn:
+          type:
+          - string
+          - 'null'
+        details:
+          $ref: '#/components/schemas/Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProductDetails'
+      additionalProperties: false
+      description: Request body for PUT Products/External. Same as Wholechain.API.Contracts.Connect.Events.Requests.V2.ConnectProduct but without UpdateIfExists (always treated as true for updates).
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

@@ -1,0 +1,160 @@
+openapi: 3.2.0
+info:
+  title: Wholechain EPCIS Legacy Interface API
+  version: v1
+  contact:
+    url: https://www.connect.wholechain.com
+  description: 'Operations tagged EPCIS Legacy Interface across 2 of this provider''s published API definitions: wholechain-connect-swagger.json, wholechain-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://connect.wholechain.com
+  description: Production (Swagger UI host per https://developers.wholechain.com/GettingStarted/Swagger/)
+- url: https://connect-sandbox.wholechain.com
+  description: Sandbox
+tags:
+- name: EPCIS Legacy Interface
+paths:
+  /epcis/Queries/SimpleEventQuery:
+    post:
+      tags:
+      - EPCIS Legacy Interface
+      operationId: SimpleEventQuery
+      parameters:
+      - name: X-API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: array
+                items: {}
+      summary: Simple event query
+      x-summary-source: derived
+components:
+  schemas:
+    Wholechain.Connect.Application.Models.SimpleEventQueryRequestBody:
+      type: object
+      properties:
+        lE_recordTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lT_recordTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        gE_recordTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lE_eventTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lT_eventTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        gE_eventTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        matcH_anyEPC:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        matcH_anyEPCClass:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        eQ_bizStep:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        eQ_bizLocation:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        eQ_transformationID:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        excludeDisaggregationFromClassMatches:
+          type: boolean
+        type:
+          type:
+          - string
+          - 'null'
+        pageNumber:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageSize:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Wholechain.Connect.Application.Events.Queries.GetSimpleEventQuery.SimpleEventQueryRequest:
+      type: object
+      properties:
+        queryType:
+          type:
+          - string
+          - 'null'
+        query:
+          $ref: '#/components/schemas/Wholechain.Connect.Application.Models.SimpleEventQueryRequestBody'
+        pageNumber:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pageSize:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+x-refined-from:
+- wholechain-connect-swagger.json
+- wholechain-openapi.yml

@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-connect-application-services-file-service-file-upload-event-schema.json",
+  "title": "Wholechain.Connect.Application.Services.FileService.FileUploadEvent",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.Connect.Application.Services.FileService.FileUploadEvent",
+  "type": "object",
+  "properties": {
+    "total_size": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "token": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "organisation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authenticated_user": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "filename": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "relative_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "filename_relative": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "storage_engine": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "storage_engine_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ip_address": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "file_size": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "additional_info": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "system": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "transaction_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timestamp": {
+      "type": "number",
+      "format": "double"
+    },
+    "event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shared_link_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inbox_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "node": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_support_generated": {
+      "type": "boolean"
+    },
+    "error_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "error_message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "error_original": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

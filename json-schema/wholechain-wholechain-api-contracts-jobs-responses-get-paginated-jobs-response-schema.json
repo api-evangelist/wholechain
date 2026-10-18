@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wholechain/main/json-schema/wholechain-wholechain-api-contracts-jobs-responses-get-paginated-jobs-response-schema.json",
+  "title": "Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse",
+  "x-generated": "2026-10-18",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/wholechain-openapi.yml#/components/schemas/Wholechain.API.Contracts.Jobs.Responses.GetPaginatedJobsResponse",
+  "type": "object",
+  "properties": {
+    "totalPages": {
+      "type": "integer",
+      "format": "int32",
+      "readOnly": true
+    },
+    "pageNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "totalItems": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "results": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$ref": "#/$defs/Wholechain.API.Contracts.Jobs.Responses.JobResponse"
+      }
+    },
+    "hasNextPage": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasPreviousPage": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Wholechain.API.Contracts.Jobs.Responses.JobResponse": {
+      "type": "object",
+      "properties": {
+        "jobId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payload": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/Wholechain.API.Contracts.Jobs.Responses.JobStatusContract"
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "success": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Wholechain.API.Contracts.Jobs.Responses.JobStatusContract": {
+      "enum": [
+        "Started",
+        "Completed",
+        "Failed"
+      ],
+      "type": "string"
+    }
+  }
+}
