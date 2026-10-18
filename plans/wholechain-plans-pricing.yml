@@ -229,3 +229,33 @@ plans:
   - name: Events per month
     limit_text: Starting at 2,500
 docs: https://wholechain.com/pricing
+x-canonical:
+  generated: '2026-10-18'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Lite
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Essentials
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Premium
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
