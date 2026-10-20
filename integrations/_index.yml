@@ -174,3 +174,43 @@
   source: edge
   status: pending-generation
   arazzo: null
+- slug: wholechain-gs1-us-solution-partner-program
+  label: GS1 US Solution Partner Program
+  partner: gs1
+  partner_name: GS1 US Solution Partner Program
+  category: GS1 US Solution Partner
+  type: register
+  channel: standard-directory
+  evidence: https://www.gs1us.org/services/find-gs1-us-solution-partner/profiles
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: GS1 US Solution Partner profiles (gs1us.org)
+    spec_file: null
+    standard: GS1 standards (GTIN, barcodes, RFID/EPC, traceability)
+    role: gs1-us-solution-partner
+    registered_name: Wholechain
+    website: https://wholechain.com/contact
+    matched_domain: wholechain.com
+    matched_by: domain
+    solution_areas:
+    - FSMA Rule 204
+    - 2D
+    signal_note: 'participation only: program membership is vetted, not a conformance test; solution_areas are context,
+      never read'
+    detected_by: sweep-consumer-goods.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: wholechain-microsoft-azure-marketplace
+  label: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_name: Microsoft Azure Marketplace
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=Wholechain%2C%20Inc.
+  source: edge
+  relationship: distribution-channel
+  status: not-a-workflow
+  arazzo: null
